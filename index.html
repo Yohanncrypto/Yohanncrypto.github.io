@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Johann's GitHub Page</title>
+  <link rel="icon" href="images/wizardprofile.png" type="image/png">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Johann's GitHub Page</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.facebook.com/realjohann19?mibextid=ZbWKwL"
+              target="_blank">Facebook</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.instagram.com/who_hann19/profilecard/?igsh=NXBtNDh3eWtjaW95"
+              target="_blank">Instagram</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:johanndevera555@gmail.com">Email</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/Whohann" target="_blank">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="profileSection" id="profileSection">
+      <img src="images/19_De Vera Johann Emmanuel B.jpg" alt="Johann's Profile Picture" class="profilePicture" />
+      <div class="bio">
+        <h2>Johann Emmanuel B. De Vera</h2>
+        <div class="socialIcons">
+          <a href="https://www.facebook.com/realjohann19?mibextid=ZbWKwL" target="_blank">
+            <i class="fab fa-facebook fa-lg"></i>
+          </a>
+          <a href="https://www.instagram.com/who_hann19/profilecard/?igsh=NXBtNDh3eWtjaW95" target="_blank">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+          <a href="mailto:johanndevera555@gmail.com">
+            <i class="fas fa-envelope fa-lg"></i>
+          </a>
+          <a href="https://github.com/Whohann" target="_blank">
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="aboutMe">
+      <h2>About Me</h2>
+      <p>I'm a 3rd-year BSIT student.</p>
+      <p>I like Doggos and cats, Marvel fan, Music, Halloween, Horror.</p>
+      <p>Hobbies are Painting and Drawing, Reading, Playing Online Games, Watching Movies and Series.</p>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-12 d-flex align-items-center justify-content-center position-relative"
+            style="height: 50vh; overflow: hidden;">
+            
+            <video autoplay muted loop preload="auto" playsinline
+                class="position-absolute w-100 h-100 object-fit-cover" style="z-index: -1;">
+                <source src="images/activityBG.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+
+            <div class="position-relative text-center">
+                <h1 class="text-white typewriter" id="projectsTitle"
+                    style="font-size: clamp(2rem, 5vw, 3rem); font-family: 'Orbitron', sans-serif; 
+                    letter-spacing: 2px; text-transform: uppercase; text-shadow: 
+                    0 0 10px rgb(129, 233, 252), 0 0 40px rgb(104, 207, 248);">
+                    Projects
+                </h1>
+                <div class="d-flex justify-content-center mt-3">
+                    <a href="WEBDEV/WEBDEV.html" class="text-white text-uppercase mx-3"
+                        style="font-size: 1.2rem; font-family: 'Orbitron', sans-serif; 
+                        text-decoration: none; transition: color 0.3s;" 
+                        onmouseover="this.style.color='lightblue'" 
+                        onmouseout="this.style.color='white'" role="button">
+                        WEBDEV
+                    </a>
+                    <a href="APPDEV/APPDEV.html" class="text-white text-uppercase mx-3"
+                        style="font-size: 1.2rem; font-family: 'Orbitron', sans-serif; 
+                        text-decoration: none; transition: color 0.3s;" 
+                        onmouseover="this.style.color='lightblue'" 
+                        onmouseout="this.style.color='white'" role="button">
+                        APPDEV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelector('a[href="webdev.html"]').addEventListener("click", function (event) {
+        event.preventDefault(); 
+  
+        const webdevHTML = `
+          <div class="container">
+            <div class="row mt-5" id="activity4Section">
+              <div class="col">
+                <h5 class="display-5 customHeading">Activity 4</h5>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row mt-5">
+              <div class="col-md-12">
+                <a href="WEBDEV/A04/Johann Act 4.html">
+                  <div class="card">
+                    <iframe src="WEBDEV/A04/Johann Act 4.html" class="cardIframe" title="Embedded HTML Page"></iframe>
+                    <div class="card-body">
+                      <h5 class="cardTitle">Click Here</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row mt-5" id="activity5Section">
+              <div class="col">
+                <h5 class="display-5 customHeading">Activity 5</h5>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-md-12">
+                <a href="WEBDEV/A05/act5.html">
+                  <div class="card">
+                    <iframe src="WEBDEV/A05/act5.html" class="cardIframe" title="Embedded HTML Page"></iframe>
+                    <div class="card-body">
+                      <h5 class="cardTitle">Click Here</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row mt-5" id="activity6Section">
+              <div class="col">
+                <h5 class="display-5 customHeading">Activity 6</h5>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-md-12">
+                <a href="WEBDEV/A06/act6.html">
+                  <div class="card">
+                    <iframe src="WEBDEV/A06/act6.html" class="cardIframe" title="Embedded HTML Page"></iframe>
+                    <div class="card-body">
+                      <h5 class="cardTitle">Click Here</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row mt-5" id="activity7Section">
+              <div class="col">
+                <h5 class="display-5 customHeading">Activity 7</h5>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-md-12">
+                <a href="WEBDEV/A07/Act7.html">
+                  <div class="card">
+                    <iframe src="WEBDEV/A07/Act7.html" class="cardIframe" title="Embedded HTML Page"></iframe>
+                    <div class="card-body">
+                      <h5 class="cardTitle">Click Here</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row mt-5" id="midterm1Section">
+              <div class="col">
+                <h5 class="display-5 customHeading">Part 1</h5>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-md-12">
+                <a href="WEBDEV/M01/Midterm1.html">
+                  <div class="card">
+                    <iframe src="WEBDEV/M01/Midterm1.html" class="cardIframe" title="Embedded HTML Page"></iframe>
+                    <div class="card-body">
+                      <h5 class="cardTitle">Click Here</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row mt-5" id="midterm2Section">
+              <div class="col">
+                <h5 class="display-5 customHeading">Part 2</h5>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-md-12">
+                <a href="WEBDEV/M02/Midterm2.html">
+                  <div class="card">
+                    <iframe src="WEBDEV/M02/Midterm2.html" class="cardIframe" title="Embedded HTML Page"></iframe>
+                    <div class="card-body">
+                      <h5 class="cardTitle">Click Here</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+  
+        // Inject content into the placeholder div
+        document.getElementById("webdevContent").innerHTML = webdevHTML;
+      });
+    });
+  </script>
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+      const typewriter = document.getElementById('projectsTitle');
+      let text = typewriter.textContent;
+      typewriter.textContent = '';
+      let index = 0;
+
+      function type() {
+        if (index < text.length) {
+          typewriter.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, 100);
+        }
+      }
+      type();
+    });
+    const containers = document.querySelectorAll('.container');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    containers.forEach(container => {
+      observer.observe(container);
+    });
+
+    const activityColors = {
+      profileSection: "#ffffff",
+      activity4Section: "#ECF0F9",
+      activity5Section: "#D7E3F1",
+      activity6Section: "#C0DAF1",
+      activity7Section: "#AFD1EC",
+      midterms: "#A3C6E5",
+      midterm1Section: "#8fb6d9",
+      midterm2Section: "#6d99bf"
+    };
+
+    Object.keys(activityColors).forEach(activityId => {
+      const activitySection = document.getElementById(activityId);
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio === 1) {
+            document.body.style.backgroundColor = activityColors[activityId];
+          }
+        });
+      }, { threshold: 1.0 });
+
+      observer.observe(activitySection);
+    });
+  </script>
+</body>
+
+</html>

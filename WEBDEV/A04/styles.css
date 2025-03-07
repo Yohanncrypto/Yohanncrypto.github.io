@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    background-image: url('wallpaperflare.com_wallpaper.jpg');
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+section {
+
+    font-size: larger;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+
+}
+
+#image-container {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+}
+
+.mySlides {
+        width: 100%;
+        height: auto;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: rgb(54, 54, 54);
+    font-weight: bold;
+    font-size: 18px;
+
+    transition: 0.6s ease;
+    border-radius: 0 5px 5px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.568);
+
+}
+
+.active {
+    display: block;
+}
+
+ul {
+    font-weight: 10;
+    color: rgba(255, 255, 255, 0.904);
+
+}
+
+li {
+    font-weight: 40;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+    background-color: #ffffff;
+}
+
+th {
+    background-color: #ffffff;
+}
+
+.text-photo {
+    position: absolute;
+    text-align: center;
+    font-size: larger;
+    top: 330px;
+    left: 620px;
+    color: rgb(204, 222, 238);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    height: auto;
+}
+
+header {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+}
+footer {
+    background-color: #ffffff;
+    color: #000c25;
+    padding: 10px 0;
+}
+
+@media only screen and (max-width: 768px) {
+    nav {
+        width: 100%;
+        height: auto;
+    }
+
+    #image-container {
+        width: 100%;
+    }
+}
