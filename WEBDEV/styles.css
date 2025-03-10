@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to right, #001F3F, #004080);
+    transition: background 1.5s ease-in-out;
     color: white;
     margin-left: 10px;
     margin-right: 20px;

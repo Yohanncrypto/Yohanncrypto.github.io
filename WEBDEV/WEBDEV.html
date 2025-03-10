@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Carousel</title>
+    <title>WEBDEV</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 d-flex align-items-center justify-content-center position-relative">
-    
                 <div class="position-relative text-center">
                     <h1 class="text-white typewriter" id="projectsTitle"
                         style="font-size: clamp(2rem, 5vw, 3rem); font-family: 'Orbitron', sans-serif; 
-                        letter-spacing: 2px;  margin-left: 10px;
-                        margin-right: 20px;">
+                        letter-spacing: 2px; margin-left: 10px; margin-right: 20px;">
                         WEBDEV
+                    </h1>
                 </div>
             </div>
         </div>
     </div>
-    
 
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-bg="linear-gradient(to right, #2E2E2E, #0C2458)">
                 <div class="card">
                     <h5 class="customHeading">Activity 4</h5>
                     <iframe src="A04/Johann Act 4.html" class="cardIframe"></iframe>
@@ -37,7 +37,7 @@
                 </div>
             </div>
 
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-bg="linear-gradient(to right, #2E7286, #2575fc)">
                 <div class="card">
                     <h5 class="customHeading">Activity 5</h5>
                     <iframe src="A05/act5.html" class="cardIframe"></iframe>
@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-bg="linear-gradient(to right, #540606, #0C2458)">
                 <div class="card">
                     <h5 class="customHeading">Activity 6</h5>
                     <iframe src="A06/act6.html" class="cardIframe"></iframe>
@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-bg="linear-gradient(to right, #2E2E2E, #AA7A5A)">
                 <div class="card">
                     <h5 class="customHeading">Activity 7</h5>
                     <iframe src="A07/Act7.html" class="cardIframe"></iframe>
@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-bg="linear-gradient(to right, #2E2E2E, #540606)">
                 <div class="card">
                     <h5 class="customHeading">Midterm Part 1</h5>
                     <iframe src="M01/Midterm1.html" class="cardIframe"></iframe>
@@ -77,7 +77,7 @@
                 </div>
             </div>
 
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-bg="linear-gradient(to right, #2E2E2E, #f5af19)">
                 <div class="card">
                     <h5 class="customHeading">Midterm Part 2</h5>
                     <iframe src="M02/Midterm2.html" class="cardIframe"></iframe>
@@ -108,12 +108,22 @@
                     document.querySelectorAll(".swiper-slide").forEach(slide => {
                         slide.classList.remove("active-slide");
                     });
-                    document.querySelector(".swiper-slide-active").classList.add("active-slide");
+
+                    let activeSlide = document.querySelector(".swiper-slide-active");
+                    activeSlide.classList.add("active-slide");
+
+                    document.body.style.background = activeSlide.getAttribute("data-bg");
                 }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let initialSlide = document.querySelector(".swiper-slide-active");
+            if (initialSlide) {
+                document.body.style.background = initialSlide.getAttribute("data-bg");
             }
         });
     </script>
 
 </body>
 </html>
-
