@@ -26,7 +26,6 @@ body {
     overflow: hidden;
     background: rgb(26, 26, 26);
     box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
-  
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
@@ -34,13 +33,12 @@ body {
     transform: scale(1.2);
     opacity: 1;
     box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.8);
-   
 }
 
 .swiper-slide:not(.swiper-slide-active) {
     transform: scale(0.5);
     opacity: 0.4;
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 .cardIframe {
@@ -63,7 +61,7 @@ body {
 }
 
 .cardTitle:hover {
-    color: #89d4ff;
+    color: #ffffff;
 }
 
 .swiper-button-prev,
@@ -74,11 +72,102 @@ body {
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-    color: #89d4ff !important;
+    color: #ffffff !important;
 }
 
 .customHeading {
     margin-left: 10px;
     margin-right: 20px;
-    color: #8ec3ff;
+    color: #ffffff;
 }
+
+@media (max-width: 768px) {
+    .swiper-slide .card {
+        width: 90%;
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .cardIframe {
+        height: 200px;
+    }
+
+    .swiper-slide:not(.swiper-slide-active) {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+
+    .swiper-slide-active .card {
+        transform: scale(1);
+    }
+
+    .cardTitle {
+        font-size: 1rem;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        font-size: 1rem;
+    }
+
+    .customHeading {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper-slide .card {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .cardIframe {
+        height: 180px;
+    }
+
+    .swiper-slide:not(.swiper-slide-active) {
+        transform: scale(0.8);
+        opacity: 0.6;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        font-size: 0.9rem;
+    }
+
+    .customHeading {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .swiper-slide .card {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .cardIframe {
+        height: 160px;
+    }
+
+    .swiper-slide:not(.swiper-slide-active) {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        font-size: 0.8rem;
+    }
+
+    .customHeading {
+        font-size: 1rem;
+    }
+
+    .cardTitle {
+        font-size: 0.9rem;
+    }
+}
+

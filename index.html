@@ -75,7 +75,7 @@
             
             <video autoplay muted loop preload="auto" playsinline
                 class="position-absolute w-100 h-100 object-fit-cover" style="z-index: -1;">
-                <source src="images/activityBG.mp4" type="video/mp4">
+                <source src="images/bgcolor.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
 
@@ -84,7 +84,7 @@
                 <h1 class="text-white typewriter" id="projectsTitle"
                     style="font-size: clamp(2rem, 5vw, 3rem); font-family: 'Orbitron', sans-serif; 
                     letter-spacing: 2px; text-transform: uppercase; text-shadow: 
-                    0 0 10px rgb(129, 233, 252), 0 0 40px rgb(104, 207, 248);">
+                    0 0 10px rgb(4, 193, 240), 0 0 40px rgb(0, 118, 134);">
                     Projects
                 </h1>
                 <div class="d-flex justify-content-center mt-3">
@@ -106,137 +106,74 @@
             </div>
         </div>
     </div>
+
+<div class="container py-5">
+  <h2 class="text-center mb-4">Games I Play</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="gameSection">
+      <div class="col">
+          <div class="card game-card">
+              <img src="images/minecraft.jpg" class="card-img-top" alt="Minecraft">
+              <div class="card-body">
+                  <h5 class="card-title">Minecraft</h5>
+                  <p class="card-text">A sandbox game where you can build, explore, and survive in a blocky world.</p>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card game-card">
+              <img src="images/left4dead.jpg" class="card-img-top" alt="Left 4 Dead">
+              <div class="card-body">
+                  <h5 class="card-title">Left 4 Dead</h5>
+                  <p class="card-text">A cooperative first-person shooter game where you fight against zombies.</p>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card game-card">
+              <img src="images/untildawn.jpg" class="card-img-top" alt="Until Dawn">
+              <div class="card-body">
+                  <h5 class="card-title">Until Dawn</h5>
+                  <p class="card-text">A horror interactive drama game where choices affect the outcome of the story.</p>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card game-card">
+              <img src="images/mobilelegends.jpg" class="card-img-top" alt="Mobile Legends">
+              <div class="card-body">
+                  <h5 class="card-title">Mobile Legends</h5>
+                  <p class="card-text">A popular mobile multiplayer online battle arena (MOBA) game.</p>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card game-card">
+              <img src="images/puzzleblock.png" class="card-img-top" alt="Puzzle Block">
+              <div class="card-body">
+                  <h5 class="card-title">Puzzle Block</h5>
+                  <p class="card-text">A fun and challenging puzzle game where you match blocks to solve different levels.</p>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+          <div class="card game-card">
+              <img src="images/roblox.jpg" class="card-img-top" alt="Roblox">
+              <div class="card-body">
+                  <h5 class="card-title">Roblox</h5>
+                  <p class="card-text">A platform where you can create and play games made by other users, offering endless possibilities.</p>
+              </div>
+          </div>
+      </div>
   </div>
+</div>
+ 
+    <footer class="text-center py-4">
+      <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+  </footer>
+  </div>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.querySelector('a[href="webdev.html"]').addEventListener("click", function (event) {
-        event.preventDefault(); 
-  
-        const webdevHTML = `
-          <div class="container">
-            <div class="row mt-5" id="activity4Section">
-              <div class="col">
-                <h5 class="display-5 customHeading">Activity 4</h5>
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row mt-5">
-              <div class="col-md-12">
-                <a href="WEBDEV/A04/Johann Act 4.html">
-                  <div class="card">
-                    <iframe src="WEBDEV/A04/Johann Act 4.html" class="cardIframe" title="Embedded HTML Page"></iframe>
-                    <div class="card-body">
-                      <h5 class="cardTitle">Click Here</h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row mt-5" id="activity5Section">
-              <div class="col">
-                <h5 class="display-5 customHeading">Activity 5</h5>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-md-12">
-                <a href="WEBDEV/A05/act5.html">
-                  <div class="card">
-                    <iframe src="WEBDEV/A05/act5.html" class="cardIframe" title="Embedded HTML Page"></iframe>
-                    <div class="card-body">
-                      <h5 class="cardTitle">Click Here</h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row mt-5" id="activity6Section">
-              <div class="col">
-                <h5 class="display-5 customHeading">Activity 6</h5>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-md-12">
-                <a href="WEBDEV/A06/act6.html">
-                  <div class="card">
-                    <iframe src="WEBDEV/A06/act6.html" class="cardIframe" title="Embedded HTML Page"></iframe>
-                    <div class="card-body">
-                      <h5 class="cardTitle">Click Here</h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row mt-5" id="activity7Section">
-              <div class="col">
-                <h5 class="display-5 customHeading">Activity 7</h5>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-md-12">
-                <a href="WEBDEV/A07/Act7.html">
-                  <div class="card">
-                    <iframe src="WEBDEV/A07/Act7.html" class="cardIframe" title="Embedded HTML Page"></iframe>
-                    <div class="card-body">
-                      <h5 class="cardTitle">Click Here</h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row mt-5" id="midterm1Section">
-              <div class="col">
-                <h5 class="display-5 customHeading">Part 1</h5>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-md-12">
-                <a href="WEBDEV/M01/Midterm1.html">
-                  <div class="card">
-                    <iframe src="WEBDEV/M01/Midterm1.html" class="cardIframe" title="Embedded HTML Page"></iframe>
-                    <div class="card-body">
-                      <h5 class="cardTitle">Click Here</h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row mt-5" id="midterm2Section">
-              <div class="col">
-                <h5 class="display-5 customHeading">Part 2</h5>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-md-12">
-                <a href="WEBDEV/M02/Midterm2.html">
-                  <div class="card">
-                    <iframe src="WEBDEV/M02/Midterm2.html" class="cardIframe" title="Embedded HTML Page"></iframe>
-                    <div class="card-body">
-                      <h5 class="cardTitle">Click Here</h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        `;
-  
-        // Inject content into the placeholder div
-        document.getElementById("webdevContent").innerHTML = webdevHTML;
-      });
-    });
-  </script>
+ 
   <script>
     
     document.addEventListener('DOMContentLoaded', function () {
@@ -249,7 +186,7 @@
         if (index < text.length) {
           typewriter.textContent += text.charAt(index);
           index++;
-          setTimeout(type, 100);
+          setTimeout(type, 30);
         }
       }
       type();
@@ -262,7 +199,7 @@
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
 
     containers.forEach(container => {
       observer.observe(container);
@@ -270,13 +207,8 @@
 
     const activityColors = {
       profileSection: "#ffffff",
-      activity4Section: "#ECF0F9",
-      activity5Section: "#D7E3F1",
-      activity6Section: "#C0DAF1",
-      activity7Section: "#AFD1EC",
-      midterms: "#A3C6E5",
-      midterm1Section: "#8fb6d9",
-      midterm2Section: "#6d99bf"
+      gameSection: "#567D76",
+      
     };
 
     Object.keys(activityColors).forEach(activityId => {
