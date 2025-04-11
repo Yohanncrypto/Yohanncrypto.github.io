@@ -1,0 +1,91 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    background: url('img/parchment-bg.jpg') repeat;
+  }
+  
+  .wrapper {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .navbar {
+    background-color: #30006e;
+    padding: 15px 0; 
+    font-size: 1.3rem;
+    height: 80px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #762cca;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  .navbar-brand:hover {
+    color: #d4c32a;
+    text-decoration: none;
+  }
+  
+  .sidebar {
+    width: 350px;
+    background: url('img/scrollTexture.png') no-repeat;
+    padding: 1.5rem 1rem;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 80px;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+  }
+  
+  .sidebar .nav-link {
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: #dcdcdc;
+    color: #000;
+  }
+  
+  .sidebar .nav-link.active {
+    background-color: #30006e;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    margin-left: 350px;
+    padding-top: 80px; 
+  }
+  
+  p {
+    font-family: serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  h2, h3 {
+    font-family: 'Cinzel', serif;
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: #ded2ff;
+    box-shadow: 0 0 5px #9e9cff, 0 0 10px #c9bfff;
+  }
+  
