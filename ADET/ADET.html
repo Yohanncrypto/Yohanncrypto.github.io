@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 d-flex align-items-center justify-content-center position-relative">
-                <div class="position-relative text-center">
+            <div class="col-12 d-flex align-items-left justify-content-left position-relative">
+                <div class="position-relative text-left">
                     <h1 class="text-white typewriter" id="projectsTitle"
                         style="font-size: clamp(2rem, 5vw, 3rem); font-family: 'Orbitron', sans-serif; 
-                        letter-spacing: 2px;  margin-left: 10px;
+                        letter-spacing: 2px;  margin-left: 30px;
                         margin-right: 20px;">
                         APPDEV
                     </h1>
@@ -25,7 +26,7 @@
     
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-bg="linear-gradient(to right, #421A6D, #2E2E2E)">
                 <div class="card">
                     <h5 class="customHeading">Activity 2</h5>
                     <iframe src="A02/index.php" class="cardIframe"></iframe>
@@ -34,9 +35,8 @@
                     </div>
                 </div>
             </div>
-       
-
-            <div class="swiper-slide">
+            
+            <div class="swiper-slide" data-bg="linear-gradient(to right, #2E2E2E, #F3BA1C)">
                 <div class="card">
                     <h5 class="customHeading">Activity 3</h5>
                     <iframe src="A03/index.html" class="cardIframe" title="Activity 3"></iframe>
@@ -46,7 +46,7 @@
                 </div>
             </div>
 
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-bg="linear-gradient(to right, #2E2E2E, #286F15)">
                 <div class="card">
                     <h5 class="customHeading">Activity 4</h5>
                     <iframe src="A04/index.html" class="cardIframe" title="Activity 4"></iframe>
@@ -56,7 +56,8 @@
                 </div>
             </div>
 
-            <div class="swiper-slide">
+            <!-- Activity 5 -->
+            <div class="swiper-slide" data-bg="linear-gradient(to right, #2E2E2E, #2E2E2E)">
                 <div class="card">
                     <h5 class="customHeading">Activity 5</h5>
                     <iframe src="A05/index.html" class="cardIframe" title="Activity 5"></iframe>
@@ -65,8 +66,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
 
         <div class="swiper-button-prev"></div>
@@ -89,10 +88,19 @@
                         slide.classList.remove("active-slide");
                     });
                     document.querySelector(".swiper-slide-active").classList.add("active-slide");
+
+                    let activeSlide = document.querySelector(".swiper-slide-active");
+                    document.body.style.background = activeSlide.getAttribute("data-bg");
                 }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let initialSlide = document.querySelector(".swiper-slide-active");
+            if (initialSlide) {
+                document.body.style.background = initialSlide.getAttribute("data-bg");
             }
         });
     </script>
 </body>
 </html>
-

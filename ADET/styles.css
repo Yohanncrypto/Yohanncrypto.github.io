@@ -2,126 +2,112 @@ body {
     background: linear-gradient(to right, #001F3F, #004080);
     color: white;
     margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    text-align: center;
+    font-family: 'Orbitron', sans-serif;  
 }
 
+/* Swiper Container */
 .swiper {
     width: 100%;
-    max-width: 850px; /* Adjusted swiper width for better balance */
+    max-width: 1200px; 
     padding: 50px 0;
-    margin: 0 auto; /* Center the swiper horizontally */
 }
 
-.swiper-wrapper {
-    display: flex;
-    flex-direction: row; /* Row layout for the swiper */
-    align-items: center;
-}
-
+/* Swiper Slide */
 .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.5s ease, opacity 0.5s ease;
-    position: relative;
-    z-index: 1;
 }
 
 .swiper-slide .card {
     width: 100%;
-    max-width: 500px; /* Set a maximum width */
-    height: auto;
-    border-radius: 15px; /* Rounded corners */
+    max-width: 700px; 
+    height: 550px; 
+    border-radius: 30px; 
     overflow: hidden;
     background: rgb(26, 26, 26);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2), 
+                -8px -8px 15px rgba(255, 255, 255, 0.1); 
     transition: transform 0.5s ease, opacity 0.5s ease;
     text-align: center;
-    padding: 10px;
     position: relative;
-    box-shadow: none; /* Removed shadow */
-    margin-bottom: 10px; /* Added space between cards */
-    display: flex;
-    flex-direction: column; /* Ensure content is stacked vertically */
-    align-items: center; /* Center align all content within the card */
 }
 
+/* Active Card */
 .swiper-slide-active .card {
     transform: scale(1.05);
     opacity: 1;
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.3), 
+                -12px -12px 20px rgba(255, 255, 255, 0.1); /* Neumorphism effect */
 }
 
+/* Non-active Slide */
 .swiper-slide:not(.swiper-slide-active) {
-    transform: scale(0.95);
-    opacity: 0.7;
+    transform: scale(0.8);
+    opacity: 0.5;
     pointer-events: none;
 }
 
+
+/* Card Iframe */
 .cardIframe {
-    width: 100%;
-    height: 450px; 
+    width: 95%;
+    height: 80%;  
     border: none;
-    border-radius: 5px;
-    object-fit: contain; /* Ensure content fits properly */
-    margin-bottom: 5px; /* Added margin for separation */
+    border-radius: 20px; 
 }
 
+/* Card Body */
 .card-body {
-    padding: 5px; /* Added more padding to give space around text */
-    margin-top: 10px; /* Increased top margin for better spacing */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Stack the text and button vertically */
+    padding: 15px 20px; 
 }
 
-.customHeading {
-    margin: 5px;
-    font-size: 1.2rem;
-    color: #89d4ff;
-    margin-bottom: 5px; /* Added space below the heading */
-}
-
+/* Card Title */
 .cardTitle {
-    font-size: 1.4rem;
+    margin: 0;
+    font-size: 1.2rem;
     color: #27528b;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
+/* Hover Effect on Card Title */
 .cardTitle:hover {
     color: #89d4ff;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .swiper {
-        max-width: 100%;
-        padding: 20px 0;
-    }
+/* Click Below Text */
+.clickBelow {
+    margin-top: 20px; 
+    font-size: 1.1rem;
+    color: #27528b;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-    .swiper-slide .card {
-        max-width: 100%; /* Allow card to take full width on smaller screens */
-        border-radius: 12px; /* Slightly reduced border radius on mobile */
-    }
+.clickBelow:hover {
+    color: #89d4ff;
+}
 
-    .cardIframe {
-        height: 350px; /* Reduced iframe height for smaller screens */
-    }
+.clickBelowBtn {
+    display: inline-block;
+    background-color: #27528b;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 10px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5), 
+                -4px -4px 10px rgba(255, 255, 255, 0.1); 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .card-body {
-        padding: 10px;
-        margin-top: 10px;
-    }
-
-    .customHeading {
-        font-size: 1rem; /* Smaller font size on mobile */
-        margin-bottom: 10px; /* Less margin below the heading */
-    }
-
-    .cardTitle {
-        font-size: 1.1rem; /* Smaller font size on mobile */
-        margin-top: 12px; /* Less margin for better compactness */
-    }
+.clickBelowBtn:hover {
+    background-color: #89d4ff;
+    color: #001F3F;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2), 
+                -6px -6px 15px rgba(255, 255, 255, 0.1); /* Neumorphism effect */
 }
