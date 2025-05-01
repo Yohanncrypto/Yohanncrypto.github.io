@@ -4,16 +4,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Plantenings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <style>
+        body {
+            color: white;
+            margin: 0;
+            font-family: 'Orbitron', 'Roboto', sans-serif;
+        }
+
         .custom-button {
+            color: white;
             width: 150px;
             height: 180px;
             padding: 15px;
-            font-size: 1rem;
+            font-size: 1.2rem;
             transition: transform 0.3s ease;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
 
         .custom-button:hover {
@@ -22,37 +35,10 @@
         }
 
         .custom-button img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .custom-button:hover img {
-            transform: scale(1.1);
-           
-        }
-
-
-        .topcontainer {
-            height: 30dvh;
-            overflow-x: auto;
-        }
-
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .maincontainer {
-            height: 60dvh;
-            overflow-y: auto;
-        }
-
-        .custom-button img {
-            max-width: 80%;
-            height: auto;
-            margin-bottom: 10px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
             transition: transform 0.3s ease;
         }
 
@@ -60,27 +46,96 @@
             transform: scale(1.05);
         }
 
+        .img-fluid {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .topcontainer {
+            overflow-x: hidden;
+            padding: 10px 0;
+            border-radius: 0;
+
+        }
+
+        .categories {
+            display: flex;
+            gap: 10px;
+            padding: 0 10px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+        .custom-button {
+            flex-shrink: 0;
+            width: 180px;
+            height: 180px;
+            overflow-x: hidden;
+        }
+
+        .custom-card {
+            width: 250px;
+            height: auto;
+            border-radius: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 2px 2px 5px #b1b8c1, -2px -2px 5px #ffffff;
+
+            transition: all 0.3s ease;
+        }
+
+        .custom-card:hover {
+            box-shadow: 5px 5px 10px #b1b8c1, -5px -5px 10px #ffffff;
+        }
+
+
+        .maincontainer {
+            height: 60dvh;
+            overflow-y: auto;
+            border-radius: 0;
+
+        }
+
+        .card {
+            border-radius: 0;
+        }
+
         @media (max-width: 576px) {
             .custom-button {
-                width: 100%;
+                width: 150px;
                 margin-bottom: 10px;
+                height: 180px;
+                font-size: 0.9rem;
             }
 
-            .custom-button.content {
-                width: 100%;
+            .custom-button img {
+                max-width: 100%;
+                height: 100%;
             }
 
             .topcontainer {
                 height: auto;
+                padding: 10px 0;
             }
 
             .categories {
-                display: block;
-                overflow-x: scroll;
+                display: flex;
+                gap: 10px;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                -webkit-overflow-scrolling: touch;
             }
 
             .maincontainer {
                 padding-bottom: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
             }
 
             .col-9 {
@@ -93,29 +148,30 @@
             }
 
             .custom-button p {
-                font-size: 0.9rem;
+                font-size: 0.8rem;
             }
 
             #cartDetails {
                 display: none;
             }
 
+
             .cart-button {
                 position: fixed;
                 bottom: 20px;
                 right: 20px;
-                padding: 15px 30px;
-                background-color: #007bff;
+                padding: 12px 25px;
+                background-color: #7ba390;
                 color: white;
                 border: none;
-                font-size: 16px;
-                border-radius: 50px;
+                font-size: 14px;
+                border-radius: 0px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 cursor: pointer;
             }
 
             .cart-button:hover {
-                background-color: #0056b3;
+                background-color: #00b395;
             }
 
             #cartDetails {
@@ -123,10 +179,10 @@
                 bottom: 70px;
                 right: 20px;
                 background-color: white;
-                border-radius: 10px;
-                padding: 20px;
+                border-radius: 0px;
+                padding: 15px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                width: 250px;
+                width: 200px;
                 max-height: 300px;
                 overflow-y: auto;
                 z-index: 999;
@@ -141,41 +197,64 @@
 
         @media (max-width: 400px) {
             .custom-button p {
-                font-size: 0.8rem;
+                font-size: 0.7rem;
             }
 
             .topcontainer {
                 padding: 10px 0;
+            }
+
+            .custom-button {
+                height: 180px;
+            }
+
+            .custom-button img {
+                max-width: 100%;
+            }
+
+            .cart-button {
+                padding: 10px 20px;
+                font-size: 12px;
+                height: 70px;
+                width: 100px;
+                border-radius: 100px;
+            }
+
+            #cartDetails {
+                width: 180px;
             }
         }
     </style>
 </head>
 
 <body>
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar" style="background-color: #7ba390;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24"
-                    class="d-inline-block align-text-top">
-                Bootstrap
-            </a>
+            <div class="navbar-brand">
+                <div class="fas fa-leaf p-2" style="font-size: 30px; color: white;">
+                    Plantenings
+                </div>
+            </div>
         </div>
     </nav>
+
 
     <div class="container-fluid">
         <div class="row pt-3">
             <div class="col-12 col-md-9">
                 <div class="row">
                     <div class="col pb-3">
-                        <div class="card overflow-scroll p-3 topcontainer">
+                        <div class="card p-3 topcontainer">
                             <div class="d-flex flex-start flex-row categories" id="categories"></div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="card overflow-scroll p-3 maincontainer">
-                            <div class="d-flex flex-start flex-row flex-wrap" id="maincontainer"></div>
+                        <div class="card p-3 maincontainer">
+                            <div class="d-flex flex-row flex-wrap" id="maincontainer"
+                                style="display: flex; justify-content: center; align-items: flex-start; width: 100%; overflow-y: auto;">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -195,65 +274,216 @@
         </div>
     </div>
 
-    <button class="cart-button" onclick="toggleCartDetails()">Cart</button>
+    <button class="cart-button" onclick="toggleCartDetails()">
+        <i class="fas fa-shopping-cart" style="font-size: 24px;"></i>
+    </button>
+
 
     <script>
         var products = [
+
             {
-                "category": "Beverage",
-                "image": "img/beverages.jpg",
+                "category": "Succulents",
+                "image": "img/succulentIcon.png",
+                "backgroundColor": "#89B1CB",
                 "contents": [
                     {
                         "isAvailable": true,
-                        "name": "Coke",
-                        "code": "CK",
-                        "image": "img/coke.jpg",
+                        "name": "Aloe Vera",
+                        "code": "ALV",
+                        "backgroundColor": "#89B1CB",
                         "sizes": [
-                            { "name": "regular", "code": "RG", "price": 30 },
-                            { "name": "medium", "code": "MD", "price": 35 },
-                            { "name": "large", "code": "LG", "price": 40 }
+                            { "name": "XSmall", "code": "ES", "price": 100, "image": "img/AVExtraSmall.png" },
+                            { "name": "Small", "code": "SM", "price": 150, "image": "img/AVSmall.png" },
+                            { "name": "Medium", "code": "MD", "price": 300, "image": "img/AVMedium.png" },
+                            { "name": "Large", "code": "LG", "price": 500, "image": "img/AVLarge.png" },
+                            { "name": "XLarge", "code": "XL", "price": 500, "image": "img/AVExtralarge.png" }
                         ]
                     },
                     {
                         "isAvailable": true,
-                        "name": "Sprite",
-                        "code": "SPRT",
-                        "image": "img/sprite.jpg",
+                        "name": "Cactus",
+                        "code": "CACT",
+                        "backgroundColor": "#89CBA0",
                         "sizes": [
-                            { "name": "regular", "code": "RG", "price": 30 },
-                            { "name": "medium", "code": "MD", "price": 35 },
-                            { "name": "large", "code": "LG", "price": 40 }
-                        ]
-                    },
-                    {
-                        "isAvailable": true,
-                        "name": "Royal",
-                        "code": "RYL",
-                        "image": "img/royal.jpg",
-                        "sizes": [
-                            { "name": "regular", "code": "RG", "price": 30 },
-                            { "name": "medium", "code": "MD", "price": 35 },
-                            { "name": "large", "code": "LG", "price": 40 }
+                            { "name": "Small", "code": "SM", "price": 100, "image": "img/cactusSmall.png" },
+                            { "name": "Medium", "code": "MD", "price": 150, "image": "img/cactusMedium.png" },
+                            { "name": "Large", "code": "LG", "price": 200, "image": "img/cactusLarge.png" },
+                            { "name": "XLarge", "code": "XL", "price": 250, "image": "img/cactusExtralarge.png" },
+                            { "name": "Famly1", "code": "CF1", "price": 500, "image": "img/cactusFamily1.png" },
+                            { "name": "Family2", "code": "CF2", "price": 500, "image": "img/cactusFamily2.png" },
+                            { "name": "Family3", "code": "CF3", "price": 500, "image": "img/cactusFamily3.png" },
+                            { "name": "Mini", "code": "MIN", "price": 50, "image": "img/cactusMini.png" },
+                            { "name": "Mega", "code": "MEG", "price": 300, "image": "img/cactusMega.png" }
                         ]
                     }
                 ]
             },
             {
-                "category": "Burgers",
-                "image": "img/burgers.jpg",
+                "category": "Indoor Plants",
+                "image": "img/indoorplantIcon.png",
+                "backgroundColor": "#89BCCB",
                 "contents": [
-                    { "isAvailable": true, "name": "Burger McDo", "code": "BRGR", "image": "img/burger_mcd.jpg", "price": 50 },
-                    { "isAvailable": true, "name": "Chicken Burger", "code": "CKN BRGR", "image": "img/chicken_burger.jpg", "price": 50 },
-                    { "isAvailable": true, "name": "Cheesy Burger McDo", "code": "CSY BRGR", "image": "img/cheesy_burger.jpg", "price": 50 },
-                    { "isAvailable": true, "name": "Cheeseburger", "code": "CSBRGR", "image": "img/cheeseburger.jpg", "price": 50 },
-                    { "isAvailable": false, "name": "Big Mac", "code": "BG MAC", "image": "img/big_mac.jpg", "price": 50 }
+                    {
+                        "isAvailable": true,
+                        "name": "Spider Plant",
+                        "backgroundColor": "#89BCCB",
+                        "code": "SP",
+
+                        "sizes": [
+                            { "name": "Small", "code": "SM", "price": 250, "image": "img/spiderplantSmall.png" },
+                            { "name": "Medium", "code": "MD", "price": 300, "image": "img/spiderplantMedium.png" }
+                        ]
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Peace Lily",
+                        "code": "PL",
+                        "backgroundColor": "#89BCCB",
+                        "sizes": [
+                            { "name": "Small", "code": "SM", "price": 300, "image": "img/peacelilySmall.png" },
+                            { "name": "Medium", "code": "MD", "price": 350, "image": "img/peacelilyMedium.png" }
+                        ]
+                    }
                 ]
             },
             {
-                "category": "Pasta",
-                "image": "img/pasta.jpg",
+                "category": "Outdoor Plants",
+                "image": "img/outdoorplantIcon.png",
+                "backgroundColor": "#89C3CB",
                 "contents": [
-                    { "isAvailable": true, "name": "McSpaghetti", "code": "SPAG", "image": "img/mcspaghetti.jpg", "price": 50 }
+                    {
+                        "isAvailable": true,
+                        "name": "Monstera",
+                        "code": "MONS",
+                        "backgroundColor": "#89C3CB",
+                        "sizes": [
+                            { "name": "Small", "code": "SM", "price": 400, "image": "img/monsteraSmall.png" },
+                            { "name": "Large", "code": "LG", "price": 500, "image": "img/monsteraLarge.png" }
+                        ]
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Tulip",
+                        "code": "TULIP",
+                        "backgroundColor": "#89C3CB",
+                        "sizes": [
+                            { "name": "Small", "code": "SM", "price": 300, "image": "img/tulipSmall.png" },
+                            { "name": "Medium", "code": "MD", "price": 400, "image": "img/tulipMedium.png" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "category": "Pots",
+                "image": "img/potIcon.png",
+                "backgroundColor": " #89CACB",
+                "contents": [
+                    {
+                        "isAvailable": true,
+                        "name": "Clay Pot",
+                        "code": "CP",
+                        "backgroundColor": "#89CACB",
+                        "sizes": [
+                            { "name": "White", "code": "WT", "price": 10, "image": "img/whitePot.png" },
+                            { "name": "Black", "code": "BK", "price": 10, "image": "img/blackPot.png" },
+                            { "name": "Orange", "code": "OR", "price": 10, "image": "img/orangePot.png" },
+                            { "name": "Brown", "code": "BR", "price": 10, "image": "img/brownPot.png" },
+                            { "name": "Red", "code": "RD", "price": 10, "image": "img/redPot.png" }
+
+                        ]
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Flower Pot",
+                        "code": "FP",
+                        "backgroundColor": "#89CACB",
+                        "sizes": [
+                            { "name": "Aqua", "code": "SM", "price": 150, "image": "img/flowerPot1.png" },
+                            { "name": "Green", "code": "MD", "price": 150, "image": "img/flowerPot2.png" },
+                            { "name": "Orange", "code": "LG", "price": 150, "image": "img/flowerPot3.png" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "category": "Gardening Tools",
+                "image": "img/gardeningtoolsIcon.png",
+                "backgroundColor": "#89CBB5",
+                "contents": [
+                    {
+                        "isAvailable": true,
+                        "name": "Bucket",
+                        "code": "BKT",
+                        "backgroundColor": "#89CBB5",
+                        "sizes": [
+                            { "name": "Pink", "code": "P", "price": 105, "image": "img/bucketPink.png" },
+                            { "name": "Green", "code": "G", "price": 105, "image": "img/bucketGreen.png" },
+                            { "name": "Red", "code": "R", "price": 105, "image": "img/bucketRed.png" }
+                        ]
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Pruning Shears",
+                        "code": "SHEARS",
+                        "backgroundColor": "#89CBB5",
+                        "sizes": [
+                            { "name": "Standard", "code": "STD", "price": 200, "image": "img/shearsStandard.png" },
+                            { "name": "Heavy Duty", "code": "HD", "price": 350, "image": "img/shearsHeavy.png" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "category": "seedsIcon",
+                "image": "img/seedsIcon.png",
+                "backgroundColor": "#89CB9B",
+                "contents": [
+                    {
+                        "isAvailable": true,
+                        "name": "Tomato Seeds",
+                        "code": "TS",
+                        "backgroundColor": "#89CB9B",
+                        "sizes": [
+                            { "name": "1 Pack", "code": "P1", "price": 40, "image": "img/tomatoSeed.png" }
+                        ]
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Flower Seeds",
+                        "code": "FS",
+                        "backgroundColor": "#89CB9B",
+                        "sizes": [
+                            { "name": "1 Pack", "code": "P1", "price": 50, "image": "img/flowerSeed.png" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "category": "Soil",
+                "image": "img/soilIcon.png",
+                "backgroundColor": " #99CB89",
+                "contents": [
+                    {
+                        "isAvailable": true,
+                        "name": "Cactus Soil",
+                        "code": "CS",
+                        "backgroundColor": " #99CB89",
+                        "sizes": [
+                            { "name": "Small Bag", "code": "SB", "price": 105, "image": "img/cactusSoils.png" },
+                            { "name": "Large Bag", "code": "LB", "price": 300, "image": "img/cactusSoill.png" }
+                        ]
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Potting Soil",
+                        "code": "PS",
+                        "backgroundColor": " #99CB89",
+                        "sizes": [
+                            { "name": "Small Bag", "code": "SB", "price": 100, "image": "img/pottingSoils.png" },
+                            { "name": "Large Bag", "code": "LB", "price": 200, "image": "img/pottingSoill.png" }
+                        ]
+                    }
                 ]
             }
         ];
@@ -262,13 +492,13 @@
 
         function loadCategories() {
             var categoriesContainer = document.getElementById("categories");
-            products.forEach((product, index) => {
-                categoriesContainer.innerHTML += `
-                    <div onclick="loadProducts('` + index + `')" class="card mx-1 custom-button p-3 text-center">
-                        <img src="` + product.image + `" alt="Category Image" class="img-fluid" />
-                        <small>` + product.category + `</small>
-                    </div>
-                `;
+            products.forEach(function (product, index) {
+                var categoryBackgroundColor = product.backgroundColor || '#F0F0F0';
+                categoriesContainer.innerHTML +=
+                    '<div onclick="loadProducts(' + index + ')" class="card mx-1 custom-button p-3 text-center" style="background-color: ' + categoryBackgroundColor + ';">' +
+                    '<img src="' + product.image + '" alt="Category Image" class="img-fluid" />' +
+                    '<small>' + product.category + '</small>' +
+                    '</div>';
             });
         }
 
@@ -276,35 +506,31 @@
             var maincontainer = document.getElementById("maincontainer");
             maincontainer.innerHTML = "";
 
-            if (categoryIndex == 0) {
-                products[categoryIndex].contents.forEach(content => {
-                    content.sizes.forEach(size => {
-                        maincontainer.innerHTML += `
-                            <div onclick="addToReceipt('` + size.price + `', '` + content.code + size.code + `')" class="card mx-1 my-2 custom-button content p-3 text-center">
-                                <img src="` + content.image + `" alt="Product Image" class="img-fluid" />
-                                <small>` + content.name + ' ' + size.code + `</small>
-                            </div>
-                        `;
-                    });
+            products[categoryIndex].contents.forEach(function (content) {
+                content.sizes.forEach(function (size) {
+
+                    var backgroundColor = content.backgroundColor || '#C1E1C1';
+                    var backgroundEffectColor = content.backgroundColor || '#A0E4B8';
+
+                    maincontainer.innerHTML +=
+                        '<div onclick="addToReceipt(\'' + size.price + '\', \'' + content.code + size.code + '\')"class="card mx-1 my-2 content p-2 custom-card">' +
+                        '<div class="product-container" style="background-color: ' + backgroundColor + ';">' +
+                        '<img src="' + size.image + '" alt="Product Image" class="img-fluid product-image" />' +
+                        '<div class="background-color-effect" style="background-color: ' + backgroundEffectColor + ';"></div>' +
+                        '</div>' +
+                        '<div class="product-text mt-2">' +
+                        '<small>' + content.name + ' ' + size.name + '</small>' +
+                        '</div>' +
+                        '</div>';
                 });
-            } else {
-                products[categoryIndex].contents.forEach(content => {
-                    maincontainer.innerHTML += `
-                        <div onclick="addToReceipt('` + content.price + `', '` + content.code + `')" class="card mx-1 my-2 custom-button content p-3 text-center">
-                            <img src="` + content.image + `" alt="Product Image" class="img-fluid" />
-                            <small>` + content.name + `</small>
-                        </div>
-                    `;
-                });
-            }
+            });
         }
 
         function addToReceipt(price, name) {
             total += parseInt(price);
             document.getElementById("totalValue").innerText = total;
-            document.getElementById("receipt").innerHTML += `
-                <div>${name}: ${price}</div>
-            `;
+            document.getElementById("receipt").innerHTML +=
+                '<div>' + name + ': ' + price + '</div>';
         }
 
         function toggleCartDetails() {
@@ -313,6 +539,7 @@
         }
 
         window.onload = loadCategories;
+
     </script>
 </body>
 
