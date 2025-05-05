@@ -24,16 +24,17 @@ body {
     margin-bottom: 40vh;
     border-radius: 15px;
     overflow: hidden;
-    background: rgb(26, 26, 26);
-    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+    background: #2e2e2e; 
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -5px -5px 5px rgba(255, 255, 255, 0.1); 
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .swiper-slide-active .card {
     transform: scale(1.2);
     opacity: 1;
-    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), -3px -3px 3px rgba(255, 255, 255, 0.1); 
 }
+
 
 .swiper-slide:not(.swiper-slide-active) {
     transform: scale(0.5);
@@ -54,19 +55,19 @@ body {
 
 .cardTitle {
     font-size: 1.2rem;
-    color: #27528b;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .cardTitle:hover {
-    color: #ffffff;
+    color: #86d9ff;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-    color: #27528b !important;
+    color: #464646 !important;
     transition: color 0.3s ease;
 }
 
@@ -83,91 +84,113 @@ body {
 
 @media (max-width: 768px) {
     .swiper-slide .card {
-        width: 90%;
-        height: auto;
-        margin-bottom: 30px;
+        width: 90%;  
+        height: auto; 
+        margin-bottom: 20px; 
+        background-color: #464646;
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2), -5px -5px 8px rgba(255, 255, 255, 0.1); /* Soft neumorphism */
+        border-radius: 8px;
+        padding: 15px; 
+        cursor: pointer;
     }
 
     .cardIframe {
-        height: 200px;
-    }
-
-    .swiper-slide:not(.swiper-slide-active) {
-        transform: scale(0.8);
-        opacity: 0.7;
-    }
-
-    .swiper-slide-active .card {
-        transform: scale(1);
+        display: none; 
     }
 
     .cardTitle {
-        font-size: 1rem;
+        font-size: 0.9rem;  
+        font-weight: bold;
+        text-align: center;
+        padding: 4px 8px;
+        background-color: #464646;
+        color: white;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .cardTitle:hover {
+        color: #86d9ff;
+    }
+    .swiper-slide .card .card-body {
+        padding: 10px;
     }
 
-    .swiper-button-prev,
-    .swiper-button-next {
-        font-size: 1rem;
+    .swiper-slide .card:hover {
+        transform: scale(1.05);
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        font-size: 1rem; 
+        color: #fff;
+    }
+
+    .swiper-button-prev:hover, .swiper-button-next:hover {
+        color: #464646;
     }
 
     .customHeading {
         font-size: 1.5rem;
+        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
     .swiper-slide .card {
-        width: 100%;
-        height: auto;
-        margin-bottom: 20px;
+        width: 100%;  
+        height: auto; 
+        margin-bottom: 15px;
+        padding: 12px;
+        cursor: pointer;
     }
 
     .cardIframe {
-        height: 180px;
+        display: none; 
     }
 
-    .swiper-slide:not(.swiper-slide-active) {
-        transform: scale(0.8);
-        opacity: 0.6;
+    .swiper-slide .card .card-body {
+        padding: 8px;
     }
 
-    .swiper-button-prev,
-    .swiper-button-next {
-        font-size: 0.9rem;
+    .swiper-slide .card:hover {
+        transform: scale(1.05);
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        font-size: 1rem;
     }
 
     .customHeading {
         font-size: 1.2rem;
+        text-align: center;
     }
 }
 
 @media (max-width: 320px) {
     .swiper-slide .card {
-        width: 100%;
+        width: 100%; 
         height: auto;
-        margin-bottom: 15px;
+        margin-bottom: 10px;      
+        cursor: pointer;
     }
 
     .cardIframe {
-        height: 160px;
+        display: none; 
     }
 
-    .swiper-slide:not(.swiper-slide-active) {
-        transform: scale(0.8);
-        opacity: 0.5;
+    .swiper-slide .card .card-body {
+        padding: 6px;
     }
 
-    .swiper-button-prev,
-    .swiper-button-next {
-        font-size: 0.8rem;
+    .swiper-slide .card:hover {
+        transform: scale(1.05);
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        font-size: 0,5rem;  
     }
 
     .customHeading {
-        font-size: 1rem;
-    }
-
-    .cardTitle {
         font-size: 0.9rem;
+        text-align: center;
     }
 }
-

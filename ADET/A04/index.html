@@ -8,236 +8,19 @@
     <title>Plantenings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <style>
-        body {
-            color: white;
-            margin: 0;
-            font-family: 'Orbitron', 'Roboto', sans-serif;
-        }
-
-        .custom-button {
-            color: white;
-            width: 150px;
-            height: 180px;
-            padding: 15px;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .custom-button:hover {
-            background-color: rgb(240, 240, 240);
-            cursor: pointer;
-        }
-
-        .custom-button img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            transition: transform 0.3s ease;
-        }
-
-        .custom-button:hover img {
-            transform: scale(1.05);
-        }
-
-        .img-fluid {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .topcontainer {
-            overflow-x: hidden;
-            padding: 10px 0;
-            border-radius: 0;
-
-        }
-
-        .categories {
-            display: flex;
-            gap: 10px;
-            padding: 0 10px;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-        }
-
-        .custom-button {
-            flex-shrink: 0;
-            width: 180px;
-            height: 180px;
-            overflow-x: hidden;
-        }
-
-        .custom-card {
-            width: 250px;
-            height: auto;
-            border-radius: 0px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            box-shadow: 2px 2px 5px #b1b8c1, -2px -2px 5px #ffffff;
-
-            transition: all 0.3s ease;
-        }
-
-        .custom-card:hover {
-            box-shadow: 5px 5px 10px #b1b8c1, -5px -5px 10px #ffffff;
-        }
-
-
-        .maincontainer {
-            height: 60dvh;
-            overflow-y: auto;
-            border-radius: 0;
-
-        }
-
-        .card {
-            border-radius: 0;
-        }
-
-        @media (max-width: 576px) {
-            .custom-button {
-                width: 150px;
-                margin-bottom: 10px;
-                height: 180px;
-                font-size: 0.9rem;
-            }
-
-            .custom-button img {
-                max-width: 100%;
-                height: 100%;
-            }
-
-            .topcontainer {
-                height: auto;
-                padding: 10px 0;
-            }
-
-            .categories {
-                display: flex;
-                gap: 10px;
-                overflow-x: auto;
-                flex-wrap: nowrap;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            .maincontainer {
-                padding-bottom: 20px;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            .col-9 {
-                padding-right: 0;
-            }
-
-            .col-3 {
-                padding-left: 0;
-                padding-top: 20px;
-            }
-
-            .custom-button p {
-                font-size: 0.8rem;
-            }
-
-            #cartDetails {
-                display: none;
-            }
-
-
-            .cart-button {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                padding: 12px 25px;
-                background-color: #7ba390;
-                color: white;
-                border: none;
-                font-size: 14px;
-                border-radius: 0px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                cursor: pointer;
-            }
-
-            .cart-button:hover {
-                background-color: #00b395;
-            }
-
-            #cartDetails {
-                position: fixed;
-                bottom: 70px;
-                right: 20px;
-                background-color: white;
-                border-radius: 0px;
-                padding: 15px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                width: 200px;
-                max-height: 300px;
-                overflow-y: auto;
-                z-index: 999;
-            }
-        }
-
-        @media (min-width: 577px) {
-            .cart-button {
-                display: none;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .custom-button p {
-                font-size: 0.7rem;
-            }
-
-            .topcontainer {
-                padding: 10px 0;
-            }
-
-            .custom-button {
-                height: 180px;
-            }
-
-            .custom-button img {
-                max-width: 100%;
-            }
-
-            .cart-button {
-                padding: 10px 20px;
-                font-size: 12px;
-                height: 70px;
-                width: 100px;
-                border-radius: 100px;
-            }
-
-            #cartDetails {
-                width: 180px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">   
 </head>
-
 <body>
+
     <nav class="navbar" style="background-color: #7ba390;">
         <div class="container-fluid">
             <div class="navbar-brand">
-                <div class="fas fa-leaf p-2" style="font-size: 30px; color: white;">
+                <div class="fas fa-leaf p-2" id="navbar-icon">
                     Plantenings
                 </div>
             </div>
         </div>
     </nav>
-
 
     <div class="container-fluid">
         <div class="row pt-3">
@@ -260,13 +43,17 @@
                 </div>
             </div>
             <div class="col-12 col-md-3">
-                <div class="card p-3" style="height: 100%; overflow: hidden;">
+                <div class="card p-3 shadow-sm" style="height: 100%; overflow: hidden;">
                     <div id="cartDetails">
-                        <div class="cart-header">Cart</div>
-                        <div id="receipt"></div>
-                        <div class="mt-4 d-flex flex-row justify-content-between">
+                        <div class="cart-header mb-3" style="font-size: 1.5rem; font-weight: 600; color: #007579;">
+                            Cart
+                        </div>
+                        <div id="receipt" style="font-size: 1rem; color: #333;">
+                        </div>
+                        <div class="mt-4 d-flex flex-row justify-content-between align-items-center"
+                            style="font-size: 1.1rem; color: #555;">
                             <div><b>TOTAL</b></div>
-                            <div><b id="totalValue">0</b></div>
+                            <div><b id="totalValue" style="color: #28a745; font-size: 1.2rem;">$0.00</b></div>
                         </div>
                     </div>
                 </div>
@@ -278,10 +65,8 @@
         <i class="fas fa-shopping-cart" style="font-size: 24px;"></i>
     </button>
 
-
     <script>
         var products = [
-
             {
                 "category": "Succulents",
                 "image": "img/succulentIcon.png",
@@ -293,11 +78,41 @@
                         "code": "ALV",
                         "backgroundColor": "#89B1CB",
                         "sizes": [
-                            { "name": "XSmall", "code": "ES", "price": 100, "image": "img/AVExtraSmall.png" },
-                            { "name": "Small", "code": "SM", "price": 150, "image": "img/AVSmall.png" },
-                            { "name": "Medium", "code": "MD", "price": 300, "image": "img/AVMedium.png" },
-                            { "name": "Large", "code": "LG", "price": 500, "image": "img/AVLarge.png" },
-                            { "name": "XLarge", "code": "XL", "price": 500, "image": "img/AVExtralarge.png" }
+                            {
+                                "name": "XSmall",
+                                "code": "ES",
+                                "price": 100,
+                                "image": "img/AVExtraSmall.png",
+                                "description": "A small aloe vera plant, perfect for small spaces."
+                            },
+                            {
+                                "name": "Small",
+                                "code": "SM",
+                                "price": 150,
+                                "image": "img/AVSmall.png",
+                                "description": "A slightly larger aloe vera plant with thicker leaves."
+                            },
+                            {
+                                "name": "Medium",
+                                "code": "MD",
+                                "price": 300,
+                                "image": "img/AVMedium.png",
+                                "description": "A medium-sized aloe vera plant with bright green leaves."
+                            },
+                            {
+                                "name": "Large",
+                                "code": "LG",
+                                "price": 500,
+                                "image": "img/AVLarge.png",
+                                "description": "A large aloe vera plant that makes a statement in any room."
+                            },
+                            {
+                                "name": "XLarge",
+                                "code": "XL",
+                                "price": 500,
+                                "image": "img/AVExtralarge.png",
+                                "description": "A very large aloe vera plant, ideal for spacious areas or as a focal point."
+                            }
                         ]
                     },
                     {
@@ -306,15 +121,69 @@
                         "code": "CACT",
                         "backgroundColor": "#89CBA0",
                         "sizes": [
-                            { "name": "Small", "code": "SM", "price": 100, "image": "img/cactusSmall.png" },
-                            { "name": "Medium", "code": "MD", "price": 150, "image": "img/cactusMedium.png" },
-                            { "name": "Large", "code": "LG", "price": 200, "image": "img/cactusLarge.png" },
-                            { "name": "XLarge", "code": "XL", "price": 250, "image": "img/cactusExtralarge.png" },
-                            { "name": "Famly1", "code": "CF1", "price": 500, "image": "img/cactusFamily1.png" },
-                            { "name": "Family2", "code": "CF2", "price": 500, "image": "img/cactusFamily2.png" },
-                            { "name": "Family3", "code": "CF3", "price": 500, "image": "img/cactusFamily3.png" },
-                            { "name": "Mini", "code": "MIN", "price": 50, "image": "img/cactusMini.png" },
-                            { "name": "Mega", "code": "MEG", "price": 300, "image": "img/cactusMega.png" }
+                            {
+                                "name": "Small",
+                                "code": "SM",
+                                "price": 100,
+                                "image": "img/cactusSmall.png",
+                                "description": "A small, hardy cactus perfect for beginners."
+                            },
+                            {
+                                "name": "Medium",
+                                "code": "MD",
+                                "price": 150,
+                                "image": "img/cactusMedium.png",
+                                "description": "A medium-sized cactus that thrives with minimal care."
+                            },
+                            {
+                                "name": "Large",
+                                "code": "LG",
+                                "price": 200,
+                                "image": "img/cactusLarge.png",
+                                "description": "A large cactus with vibrant spines, ideal for a desert-themed display."
+                            },
+                            {
+                                "name": "XLarge",
+                                "code": "XL",
+                                "price": 250,
+                                "image": "img/cactusExtralarge.png",
+                                "description": "A large cactus with wide spines, perfect for a statement piece in your garden."
+                            },
+                            {
+                                "name": "Famly1",
+                                "code": "CF1",
+                                "price": 500,
+                                "image": "img/cactusFamily1.png",
+                                "description": "A family of smaller cacti grouped together in one pot."
+                            },
+                            {
+                                "name": "Family2",
+                                "code": "CF2",
+                                "price": 500,
+                                "image": "img/cactusFamily2.png",
+                                "description": "A different cactus family grouping with varied shapes and sizes."
+                            },
+                            {
+                                "name": "Family3",
+                                "code": "CF3",
+                                "price": 500,
+                                "image": "img/cactusFamily3.png",
+                                "description": "A large cactus family arrangement with colorful flowers."
+                            },
+                            {
+                                "name": "Mini",
+                                "code": "MIN",
+                                "price": 50,
+                                "image": "img/cactusMini.png",
+                                "description": "A tiny cactus, perfect for desk decor."
+                            },
+                            {
+                                "name": "Mega",
+                                "code": "MEG",
+                                "price": 300,
+                                "image": "img/cactusMega.png",
+                                "description": "A mega-sized cactus with a thick stem and stunning flowers."
+                            }
                         ]
                     }
                 ]
@@ -329,10 +198,21 @@
                         "name": "Spider Plant",
                         "backgroundColor": "#89BCCB",
                         "code": "SP",
-
                         "sizes": [
-                            { "name": "Small", "code": "SM", "price": 250, "image": "img/spiderplantSmall.png" },
-                            { "name": "Medium", "code": "MD", "price": 300, "image": "img/spiderplantMedium.png" }
+                            {
+                                "name": "Small",
+                                "code": "SM",
+                                "price": 250,
+                                "image": "img/spiderplantSmall.png",
+                                "description": "A small spider plant with trailing leaves, easy to care for."
+                            },
+                            {
+                                "name": "Medium",
+                                "code": "MD",
+                                "price": 300,
+                                "image": "img/spiderplantMedium.png",
+                                "description": "A medium-sized spider plant that grows quickly with little maintenance."
+                            }
                         ]
                     },
                     {
@@ -341,8 +221,20 @@
                         "code": "PL",
                         "backgroundColor": "#89BCCB",
                         "sizes": [
-                            { "name": "Small", "code": "SM", "price": 300, "image": "img/peacelilySmall.png" },
-                            { "name": "Medium", "code": "MD", "price": 350, "image": "img/peacelilyMedium.png" }
+                            {
+                                "name": "Small",
+                                "code": "SM",
+                                "price": 300,
+                                "image": "img/peacelilySmall.png",
+                                "description": "A small peace lily, known for its elegant white flowers."
+                            },
+                            {
+                                "name": "Medium",
+                                "code": "MD",
+                                "price": 350,
+                                "image": "img/peacelilyMedium.png",
+                                "description": "A medium-sized peace lily that adds a touch of class to any room."
+                            }
                         ]
                     }
                 ]
@@ -358,8 +250,20 @@
                         "code": "MONS",
                         "backgroundColor": "#89C3CB",
                         "sizes": [
-                            { "name": "Small", "code": "SM", "price": 400, "image": "img/monsteraSmall.png" },
-                            { "name": "Large", "code": "LG", "price": 500, "image": "img/monsteraLarge.png" }
+                            {
+                                "name": "Small",
+                                "code": "SM",
+                                "price": 400,
+                                "image": "img/monsteraSmall.png",
+                                "description": "A small monstera with beautiful split leaves, great for indoors."
+                            },
+                            {
+                                "name": "Large",
+                                "code": "LG",
+                                "price": 500,
+                                "image": "img/monsteraLarge.png",
+                                "description": "A large monstera with lush green leaves, perfect for larger spaces."
+                            }
                         ]
                     },
                     {
@@ -368,8 +272,20 @@
                         "code": "TULIP",
                         "backgroundColor": "#89C3CB",
                         "sizes": [
-                            { "name": "Small", "code": "SM", "price": 300, "image": "img/tulipSmall.png" },
-                            { "name": "Medium", "code": "MD", "price": 400, "image": "img/tulipMedium.png" }
+                            {
+                                "name": "Small",
+                                "code": "SM",
+                                "price": 300,
+                                "image": "img/tulipSmall.png",
+                                "description": "A small, vibrant tulip perfect for spring gardens."
+                            },
+                            {
+                                "name": "Medium",
+                                "code": "MD",
+                                "price": 400,
+                                "image": "img/tulipMedium.png",
+                                "description": "A medium-sized tulip with a mix of vibrant colors."
+                            }
                         ]
                     }
                 ]
@@ -385,12 +301,41 @@
                         "code": "CP",
                         "backgroundColor": "#89CACB",
                         "sizes": [
-                            { "name": "White", "code": "WT", "price": 10, "image": "img/whitePot.png" },
-                            { "name": "Black", "code": "BK", "price": 10, "image": "img/blackPot.png" },
-                            { "name": "Orange", "code": "OR", "price": 10, "image": "img/orangePot.png" },
-                            { "name": "Brown", "code": "BR", "price": 10, "image": "img/brownPot.png" },
-                            { "name": "Red", "code": "RD", "price": 10, "image": "img/redPot.png" }
-
+                            {
+                                "name": "White",
+                                "code": "WT",
+                                "price": 10,
+                                "image": "img/whitePot.png",
+                                "description": "A simple white clay pot, perfect for any plant."
+                            },
+                            {
+                                "name": "Black",
+                                "code": "BK",
+                                "price": 10,
+                                "image": "img/blackPot.png",
+                                "description": "A sleek black clay pot, ideal for modern decor."
+                            },
+                            {
+                                "name": "Orange",
+                                "code": "OR",
+                                "price": 10,
+                                "image": "img/orangePot.png",
+                                "description": "A bright orange clay pot, adds a pop of color."
+                            },
+                            {
+                                "name": "Brown",
+                                "code": "BR",
+                                "price": 10,
+                                "image": "img/brownPot.png",
+                                "description": "A classic brown clay pot that blends well with earthy tones."
+                            },
+                            {
+                                "name": "Red",
+                                "code": "RD",
+                                "price": 10,
+                                "image": "img/redPot.png",
+                                "description": "A vibrant red clay pot, great for tropical plants."
+                            }
                         ]
                     },
                     {
@@ -399,9 +344,27 @@
                         "code": "FP",
                         "backgroundColor": "#89CACB",
                         "sizes": [
-                            { "name": "Aqua", "code": "SM", "price": 150, "image": "img/flowerPot1.png" },
-                            { "name": "Green", "code": "MD", "price": 150, "image": "img/flowerPot2.png" },
-                            { "name": "Orange", "code": "LG", "price": 150, "image": "img/flowerPot3.png" }
+                            {
+                                "name": "Aqua",
+                                "code": "SM",
+                                "price": 150,
+                                "image": "img/flowerPot1.png",
+                                "description": "A beautiful aqua-colored flower pot, perfect for spring plants."
+                            },
+                            {
+                                "name": "Green",
+                                "code": "MD",
+                                "price": 150,
+                                "image": "img/flowerPot2.png",
+                                "description": "A calming green flower pot that enhances plant beauty."
+                            },
+                            {
+                                "name": "Orange",
+                                "code": "LG",
+                                "price": 150,
+                                "image": "img/flowerPot3.png",
+                                "description": "A vibrant orange flower pot, ideal for colorful flowers."
+                            }
                         ]
                     }
                 ]
@@ -417,9 +380,27 @@
                         "code": "BKT",
                         "backgroundColor": "#89CBB5",
                         "sizes": [
-                            { "name": "Pink", "code": "P", "price": 105, "image": "img/bucketPink.png" },
-                            { "name": "Green", "code": "G", "price": 105, "image": "img/bucketGreen.png" },
-                            { "name": "Red", "code": "R", "price": 105, "image": "img/bucketRed.png" }
+                            {
+                                "name": "Pink",
+                                "code": "P",
+                                "price": 105,
+                                "image": "img/bucketPink.png",
+                                "description": "A sturdy pink bucket, perfect for gardening tasks."
+                            },
+                            {
+                                "name": "Green",
+                                "code": "G",
+                                "price": 105,
+                                "image": "img/bucketGreen.png",
+                                "description": "A vibrant green bucket, great for carrying soil and plants."
+                            },
+                            {
+                                "name": "Red",
+                                "code": "R",
+                                "price": 105,
+                                "image": "img/bucketRed.png",
+                                "description": "A red bucket, ideal for outdoor gardening and heavy-duty tasks."
+                            }
                         ]
                     },
                     {
@@ -428,14 +409,26 @@
                         "code": "SHEARS",
                         "backgroundColor": "#89CBB5",
                         "sizes": [
-                            { "name": "Standard", "code": "STD", "price": 200, "image": "img/shearsStandard.png" },
-                            { "name": "Heavy Duty", "code": "HD", "price": 350, "image": "img/shearsHeavy.png" }
+                            {
+                                "name": "Standard",
+                                "code": "STD",
+                                "price": 200,
+                                "image": "img/shearsStandard.png",
+                                "description": "A standard pruning shears, great for trimming small branches"
+                            },
+                            {
+                                "name": "Heavy Duty",
+                                "code": "HD",
+                                "price": 350,
+                                "image": "img/shearsHeavy.png",
+                                "description": "Heavy-duty pruning shears for cutting thicker branches"
+                            }
                         ]
                     }
                 ]
             },
             {
-                "category": "seedsIcon",
+                "category": "Seeds",
                 "image": "img/seedsIcon.png",
                 "backgroundColor": "#89CB9B",
                 "contents": [
@@ -445,7 +438,13 @@
                         "code": "TS",
                         "backgroundColor": "#89CB9B",
                         "sizes": [
-                            { "name": "1 Pack", "code": "P1", "price": 40, "image": "img/tomatoSeed.png" }
+                            {
+                                "name": "1 Pack",
+                                "code": "P1",
+                                "price": 40,
+                                "image": "img/tomatoSeed.png",
+                                "description": "A pack of high-quality tomato seeds"
+                            }
                         ]
                     },
                     {
@@ -454,7 +453,13 @@
                         "code": "FS",
                         "backgroundColor": "#89CB9B",
                         "sizes": [
-                            { "name": "1 Pack", "code": "P1", "price": 50, "image": "img/flowerSeed.png" }
+                            {
+                                "name": "1 Pack",
+                                "code": "P1",
+                                "price": 50,
+                                "image": "img/flowerSeed.png",
+                                "description": "A pack of mixed flower seeds for a colorful garden"
+                            }
                         ]
                     }
                 ]
@@ -462,26 +467,50 @@
             {
                 "category": "Soil",
                 "image": "img/soilIcon.png",
-                "backgroundColor": " #99CB89",
+                "backgroundColor": "#99CB89",
                 "contents": [
                     {
                         "isAvailable": true,
                         "name": "Cactus Soil",
                         "code": "CS",
-                        "backgroundColor": " #99CB89",
+                        "backgroundColor": "#99CB89",
                         "sizes": [
-                            { "name": "Small Bag", "code": "SB", "price": 105, "image": "img/cactusSoils.png" },
-                            { "name": "Large Bag", "code": "LB", "price": 300, "image": "img/cactusSoill.png" }
+                            {
+                                "name": "Small Bag",
+                                "code": "SB",
+                                "price": 105,
+                                "image": "img/cactusSoils.png",
+                                "description": "A small bag of cactus-specific soil"
+                            },
+                            {
+                                "name": "Large Bag",
+                                "code": "LB",
+                                "price": 300,
+                                "image": "img/cactusSoill.png",
+                                "description": "A large bag of cactus soil"
+                            }
                         ]
                     },
                     {
                         "isAvailable": true,
                         "name": "Potting Soil",
                         "code": "PS",
-                        "backgroundColor": " #99CB89",
+                        "backgroundColor": "#99CB89",
                         "sizes": [
-                            { "name": "Small Bag", "code": "SB", "price": 100, "image": "img/pottingSoils.png" },
-                            { "name": "Large Bag", "code": "LB", "price": 200, "image": "img/pottingSoill.png" }
+                            {
+                                "name": "Small Bag",
+                                "code": "SB",
+                                "price": 100,
+                                "image": "img/pottingSoils.png",
+                                "description": "A potting soil for indoor plants"
+                            },
+                            {
+                                "name": "Large Bag",
+                                "code": "LB",
+                                "price": 200,
+                                "image": "img/pottingSoill.png",
+                                "description": "A large bag of premium potting soil"
+                            }
                         ]
                     }
                 ]
@@ -513,13 +542,15 @@
                     var backgroundEffectColor = content.backgroundColor || '#A0E4B8';
 
                     maincontainer.innerHTML +=
-                        '<div onclick="addToReceipt(\'' + size.price + '\', \'' + content.code + size.code + '\')"class="card mx-1 my-2 content p-2 custom-card">' +
+                        '<div onclick="addToReceipt(\'' + size.price + '\', \'' + content.code + size.code + '\')" class="card mx-1 my-2 content p-2 custom-card">' +
                         '<div class="product-container" style="background-color: ' + backgroundColor + ';">' +
                         '<img src="' + size.image + '" alt="Product Image" class="img-fluid product-image" />' +
                         '<div class="background-color-effect" style="background-color: ' + backgroundEffectColor + ';"></div>' +
                         '</div>' +
                         '<div class="product-text mt-2">' +
                         '<small>' + content.name + ' ' + size.name + '</small>' +
+                        '<div class="product-price" style="font-weight: bold;">$' + size.price + '</div>' +
+                        '<div class="product-description" style="font-size: 0.9em; color: #555;">' + size.description + '</div>' +
                         '</div>' +
                         '</div>';
                 });
@@ -537,9 +568,7 @@
             const cartDetails = document.getElementById("cartDetails");
             cartDetails.style.display = cartDetails.style.display === "none" ? "block" : "none";
         }
-
         window.onload = loadCategories;
-
     </script>
 </body>
 
