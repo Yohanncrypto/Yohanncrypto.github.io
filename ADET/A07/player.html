@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Music Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="icon" href="img/Vinyl Icon.png" type="image/x-icon">
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+
+    .iframe-wrapper {
+      margin: 100px auto 40px;
+      padding: 0 15px;
+      max-width: 700px;
+      margin-top: 50px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 70px;
+    }
+
+    .find-artist-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0d6efd;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 50px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      transition: width 0.3s ease, background 0.3s ease;
+      overflow: hidden;
+      font-size: 16px;
+      z-index: 1;
+    }
+
+    .find-artist-btn .icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .find-artist-btn .text {
+      align-items: center;
+      justify-content: center;
+      margin-left: 5px;
+      white-space: nowrap;
+      opacity: 0;
+      width: 0;
+      overflow: hidden;
+      transition: opacity 0.3s ease, width 0.3s ease;
+    }
+
+    .find-artist-btn:hover {
+      width: 200px;
+      background: linear-gradient(135deg, #0d6efd, #5b9cff, #611db9);
+    }
+
+    .find-artist-btn:hover .text {
+      opacity: 1;
+      width: auto;
+    }
+
+    ::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #2d85ad;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: rgb(62, 105, 124);
+    }
+
+      .fixed-image-bottom-left {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    height: 100px;
+    opacity: 0.9;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .rotate {
+    animation: slow-spin 6s linear infinite;
+  }
+
+  @keyframes slow-spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  </style>
+
+
+</head>
+
+<body>
+
+  <a href="search.html" class="find-artist-btn">
+    <span class="icon bi bi-search"></span>
+    <span class="text">Find Your Artist</span>
+  </a>
+
+  <img id="dynamic-image" src="img/fijiBlue.png" alt="Artist Image" class="fixed-image-bottom-left rotate">
+
+  <nav class="navbar navbar-dark bg-dark fixed-top px-3">
+    <a class="navbar-brand me-auto" href="#">🎵 Music Player</a>
+    <ul class="nav nav-pills">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button"
+          aria-expanded="false">More Artists</a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#fiji">Fiji Blue</a></li>
+          <li><a class="dropdown-item" href="#Sombr">Sombr</a></li>
+          <li><a class="dropdown-item" href="#Brent Faiyaz">Brent Faiyaz</a></li>
+          <li><a class="dropdown-item" href="#Poalo Nutini">Poalo Nutini</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="iframe-wrapper" id="fiji">
+      <iframe title="Fiji Blue Spotify Player"
+        src="https://open.spotify.com/embed/artist/1e7K8jD3wRuQfnwDAOeGqe?utm_source=generator"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <div class="iframe-wrapper" id="Sombr">
+      <iframe title="Sombr" src="https://open.spotify.com/embed/artist/4G9NDjRyZFDlJKMRL8hx3S?utm_source=generator"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <div class="iframe-wrapper" id="Brent Faiyaz">
+      <iframe title="Joji Spotify Player"
+        src="https://open.spotify.com/embed/artist/3tlXnStJ1fFhdScmQeLpuG?utm_source=generator"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <div class="iframe-wrapper" id="Poalo Nutini">
+      <iframe title="Poalo Nutini Spotify Player"
+        src="https://open.spotify.com/embed/artist/7x5rK9BClDQ8wmCkYAGsQp?utm_source=generator"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <footer class="text-center text-white py-4 mt-5">
+    <small>&copy; 2025 Johann. All rights reserved.</small>
+  </footer>
+
+ <script>
+    const image = document.getElementById('dynamic-image');
+
+    const sections = [
+      { id: 'fiji', src: 'img/fijiBlue.png' },
+      { id: 'Sombr', src: 'img/sombr.png' },
+      { id: 'Brent Faiyaz', src: 'img/brentFaiyaz.png' },
+      { id: 'Poalo Nutini', src: 'img/paoloNutini.png' }
+    ];
+
+    function checkVisibleSection() {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      for (const section of sections) {
+        const el = document.getElementById(section.id);
+        const rect = el.getBoundingClientRect();
+        const elTop = window.scrollY + rect.top;
+        const elBottom = elTop + el.offsetHeight;
+
+        if (scrollPosition >= elTop && scrollPosition < elBottom) {
+          if (!image.src.includes(section.src)) {
+            image.src = section.src;
+            image.classList.remove('rotate');
+            void image.offsetWidth;
+            image.classList.add('rotate');
+          }
+          break;
+        }
+      }
+    }
+
+    window.addEventListener('scroll', checkVisibleSection);
+    window.addEventListener('load', checkVisibleSection);
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+
+</html>
