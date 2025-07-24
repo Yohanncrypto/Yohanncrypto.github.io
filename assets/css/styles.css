@@ -1,0 +1,100 @@
+body {
+  font-family: "Poppins";
+}
+
+.image {
+  width: 200px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.card {
+  background-color: rgba(33, 25, 99, 0.8) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.card-image img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.small {
+  font-size: smaller;
+}
+
+.text-secondary,
+.text-body-secondary,
+p {
+  font-family: "Roboto" !important;
+}
+
+.about-card {
+  height: 100%;
+}
+
+.navigation {
+  border-radius: 0px 15px 0px 15px;
+}
+
+.navbutton {
+  cursor: pointer;
+}
+
+.glass,
+.card {
+  backdrop-filter: blur(60px) brightness(100%) !important;
+  background-color: rgba(28, 15, 87, 0.637) !important;
+  border: unset !important;
+}
+
+.navigation {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html, body, * {
+  cursor: none !important;
+}
+
+.cursor {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 50%;
+  left: 50%;
+  margin: -24px 0 0 -24px;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.3s ease-out;
+  z-index: 2;
+  background-color: transparent;
+}
+
+.cursor::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: conic-gradient(#0784f8, #07f8bc, #0784f8);
+  -webkit-mask: 
+    radial-gradient(farthest-side, transparent calc(100% - 6px), black 100%);
+  mask: 
+    radial-gradient(farthest-side, transparent calc(100% - 6px), black 100%);
+}
+
+.cursor.is-moving {
+  transform: scale(0.7);
+}
