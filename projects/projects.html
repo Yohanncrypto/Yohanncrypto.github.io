@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="../assets/images/J.png" type="image/png">
+    <title>Web Development — Johann Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* ── Page-specific additions ── */
+
+        body.webdev-page::before { background: none; }
+
+        .accent-glow {
+            position: fixed; inset: 0; z-index: -1; pointer-events: none;
+            background:
+                radial-gradient(ellipse 65% 100% at -5% 55%, rgba(18,163,189,0.32) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 60% at 2% 20%, rgba(14,120,150,0.18) 0%, transparent 50%);
+            transition: background 0.9s ease;
+        }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: rgba(255,255,255,0.7); text-decoration: none;
+            font-size: 12px; font-weight: 500; letter-spacing: 0.3px;
+            transition: color .2s;
+        }
+        .back-link:hover { color: var(--teal); }
+        .back-link::before { content: '←'; font-size: 14px; }
+
+        .hero-content .subtitle { color: rgba(255,255,255,0.55); }
+
+        .activity-index {
+            font-size: 10px; color: var(--teal);
+            border: 1px solid rgba(18, 163, 189, 0);
+            border-radius: 20px; padding: 2px 9px; margin-right: 8px;
+        }
+
+        /* ── Showcase layout ── */
+        .laptop-mockup {
+            width: 620px;
+            height: 400px;
+            overflow: hidden;
+            transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+            will-change: transform, opacity;
+        }
+        .mockup-iframe {
+            width: 110%;
+            height: 110%;
+            margin: -5%;
+            border: none;
+            display: block;
+            pointer-events: none;
+            background: #111;
+        }
+
+        @media (max-width: 768px) {
+            .laptop-mockup {
+                width: min(380px, 92vw);
+                height: calc(min(380px, 92vw) * 0.62);
+                border-width: 8px;
+            }
+            .left-content { height: 30%; min-height: 150px; }
+            .right-side { height: 70%; padding-bottom: 6vh; }
+            .item-section { align-items: flex-start; padding-top: 3vh; }
+        }
+    </style>
+</head>
+<body class="webdev-page">
+
+    <div class="accent-glow" id="accentGlow"></div>
+
+    <nav class="navbar">
+        <a href="../index.html" class="back-link">Back to Portfolio</a>
+        <span class="nav-site">Yohanncrypto.github.io</span>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-section" id="heroSection">
+        <div class="hero-content">
+            <h1>Projects</h1>
+            <p class="subtitle">Selected Activities &amp; Works</p>
+        </div>
+        <div class="scroll-indicator" id="startBtn">Tap</div>
+    </section>
+
+    <div class="projects-layout" id="projectsLayout">
+      <div class="scroll-track" id="scrollTrack">
+        <div class="left-content" id="leftContent"></div>
+        <div class="right-side" id="itemContainer"></div>
+      </div>
+      <div class="scroll-dots" id="scrollDots"></div>
+    </div>
+
+    <script>
+
+        const PROJECTS = [
+            { tag: 'Project',    title: 'SAMSUNG A52',              desc: 'Web Project',     href: 'A04/Johann Act 4.html',   color: [12, 36, 88] },
+            { tag: 'Project',    title: 'FairBanks',                 desc: 'Web Project',     href: 'A05/act5.html',           color: [37, 117, 252] },
+            { tag: 'Project',    title: 'Pokemon Starter Gallery',   desc: 'Web Project',     href: 'A06/act6.html',           color: [84, 6, 6] },
+            { tag: 'Project',    title: 'Harry Potter Characters',   desc: 'API Web Project', href: 'A07/Act7.html',           color: [170, 122, 90] },
+            { tag: 'Project',    title: 'Formula 1',                 desc: 'Web Project',     href: 'M01/Midterm1.html',       color: [84, 6, 6] },
+            { tag: 'Project',    title: 'Artworks',                  desc: 'Web Projects',    href: 'M02/Midterm2.html',       color: [245, 175, 25] },
+            { tag: 'Activity 2', title: 'Activity 2',                desc: 'Web Project',     href: 'A08/index.html',          color: [66, 26, 109] },
+            { tag: 'Activity 3', title: 'Activity 3',                desc: 'Web Project',     href: 'A09/index.html',          color: [243, 186, 28] },
+            { tag: 'Activity 4', title: 'Activity 4',                desc: 'Web Project',     href: 'A10/index.html',          color: [41, 139, 87] },
+            { tag: 'Activity 7', title: 'Activity 7',                desc: 'Web Project',     href: 'A12/index.html',          color: [46, 46, 46] },
+        ];
+
+        const leftContent   = document.getElementById('leftContent');
+        const itemContainer = document.getElementById('itemContainer');
+        const scrollDotsEl  = document.getElementById('scrollDots');
+
+        PROJECTS.forEach((p, i) => {
+            const num = String(i + 1).padStart(2, '0');
+
+            leftContent.insertAdjacentHTML('beforeend', `
+                <div class="project-text-group${i === 0 ? ' active' : ''}" id="text-${i}">
+                    <span class="project-tag"><span class="activity-index">${num}</span>${p.tag}</span>
+                    <h2>${p.title}</h2>
+                    <p>${p.desc}</p>
+                    <a href="${p.href}" class="cta-button">View Project</a>
+                </div>`);
+
+            itemContainer.insertAdjacentHTML('beforeend', `
+                <div class="item-section">
+                    <div class="showcase-wrapper">
+                        <div class="showcase-item laptop-mockup" id="item-${i}">
+                            <iframe src="${p.href}" class="mockup-iframe" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>`);
+
+            scrollDotsEl.insertAdjacentHTML('beforeend', `<div class="dot${i === 0 ? ' active' : ''}"></div>`);
+        });
+
+        const heroSection    = document.getElementById('heroSection');
+        const projectsLayout = document.getElementById('projectsLayout');
+        const scrollTrack    = document.getElementById('scrollTrack');
+        const accentGlow     = document.getElementById('accentGlow');
+        const items          = document.querySelectorAll('.showcase-item');
+        const texts          = document.querySelectorAll('.project-text-group');
+        const dots           = document.querySelectorAll('.dot');
+
+        function glowFor([r, g, b]) {
+            return `radial-gradient(ellipse 65% 100% at -5% 55%, rgba(${r},${g},${b},0.34) 0%, transparent 55%),` +
+                   `radial-gradient(ellipse 40% 60% at 2% 20%, rgba(${r},${g},${b},0.18) 0%, transparent 50%)`;
+        }
+
+        const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+        const scrollEl = () => isMobile() ? itemContainer : scrollTrack;
+
+        let isHeroVisible = true;
+        let scrollCooldown = false;
+
+        function goToProjects() {
+            if (!isHeroVisible) return;
+            isHeroVisible = false;
+            heroSection.classList.add('hidden');
+            projectsLayout.classList.add('visible');
+            scrollCooldown = true;
+            setTimeout(() => { scrollCooldown = false; }, 800);
+        }
+
+        function goToHero() {
+            if (isHeroVisible || scrollCooldown) return;
+            isHeroVisible = true;
+            heroSection.classList.remove('hidden');
+            projectsLayout.classList.remove('visible');
+            scrollEl().scrollTop = 0;
+        }
+
+        // Navigation triggers
+        window.addEventListener('wheel', (e) => {
+            if (isHeroVisible) {
+                if (e.deltaY > 30) goToProjects();
+                return;
+            }
+            if (scrollEl().scrollTop <= 5 && e.deltaY < -30) goToHero();
+        }, { passive: true });
+
+        let touchStartY = 0;
+        heroSection.addEventListener('touchstart', (e) => { touchStartY = e.touches[0].clientY; }, { passive: true });
+        heroSection.addEventListener('touchend', (e) => {
+            if (touchStartY - e.changedTouches[0].clientY > 40) goToProjects();
+        }, { passive: true });
+
+        itemContainer.addEventListener('touchstart', (e) => { touchStartY = e.touches[0].clientY; }, { passive: true });
+        itemContainer.addEventListener('touchend', (e) => {
+            const dy = touchStartY - e.changedTouches[0].clientY;
+            if (itemContainer.scrollTop <= 2 && dy < -40) goToHero();
+        }, { passive: true });
+
+        document.getElementById('startBtn').addEventListener('click', goToProjects);
+
+        // Active state and visual scaling
+        let currentActive = -1;
+        let currentColor = [...PROJECTS[0].color];
+        let targetColor  = [...PROJECTS[0].color];
+        const COLOR_LERP_SPEED = 0.05;
+
+        const lerp = (a, b, t) => a + (b - a) * t;
+
+        function updateActive(index) {
+            if (index === currentActive || index < 0 || index >= items.length) return;
+            currentActive = index;
+
+            texts.forEach((t, idx) => t.classList.toggle('active', idx === index));
+            dots.forEach((d, idx) => d.classList.toggle('active', idx === index));
+
+            targetColor = PROJECTS[index]?.color || PROJECTS[0].color;
+        }
+
+        function updateScalesAndActive() {
+            const container = scrollEl();
+            const containerRect = container.getBoundingClientRect();
+            const containerCenter = containerRect.top + containerRect.height / 2;
+            const mobile = isMobile();
+
+            let closestIndex = 0;
+            let minDistance = Infinity;
+
+            items.forEach((item, index) => {
+                const rect = item.getBoundingClientRect();
+                const itemCenter = rect.top + rect.height / 2;
+                const distance = Math.abs(containerCenter - itemCenter);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestIndex = index;
+                }
+
+                const maxDist = containerRect.height / 1.1;
+                const scale = Math.max(0.7, Math.min(1, 1 - (distance / maxDist) * 0.35));
+                item.style.transform = `scale(${scale})`;
+
+                if (mobile) {
+                    const wrapper = item.closest('.showcase-wrapper');
+                    if (wrapper) wrapper.style.opacity = distance < 250 ? '1' : '0.15';
+                }
+            });
+
+            updateActive(closestIndex);
+        }
+
+        let ticking = false;
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    updateScalesAndActive();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        scrollTrack.addEventListener('scroll', onScroll, { passive: true });
+        itemContainer.addEventListener('scroll', onScroll, { passive: true });
+
+        function tickColor() {
+            currentColor = currentColor.map((c, i) => lerp(c, targetColor[i], COLOR_LERP_SPEED));
+            accentGlow.style.background = glowFor(currentColor.map(Math.round));
+            requestAnimationFrame(tickColor);
+        }
+
+        // Init
+        updateScalesAndActive();
+        tickColor();
+    </script>
+</body>
+</html>
