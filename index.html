@@ -2,237 +2,379 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/images/J.png" type="image/png">
-    <title>Johann Portfolio - Showcase</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Johann De Vera — Creative Developer & Graphic Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo"><img src="assets/images/J.png" alt="Logo"></div>
-        <span class="nav-site">Yohanncrypto.github.io</span>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero-section" id="heroSection">
-        <div class="profile-container" id="profilePic">
-            <img src="assets/images/19_De Vera Johann Emmanuel B.jpg" alt="Johann Emmanuel B. Vera" />
+    <!-- DESCENDING STAR LOADING SCREEN -->
+    <div class="star-loader" id="starLoader" aria-hidden="true">
+        <div class="loader-drop">
+            <span class="loader-line"></span>
+            <svg class="loader-star" viewBox="0 0 24 24">
+                <path d="M12 0 C12 9 15 12 24 12 C15 12 12 15 12 24 C12 15 9 12 0 12 C9 12 12 9 12 0 Z"/>
+            </svg>
         </div>
-        <div class="hero-content">
-            <h1>Hi! I am Johann Emmanuel B. Vera</h1>
-            <p class="subtitle">Creative Developer | Graphic Designer | Artist</p>
-        </div>
-        <div class="scroll-indicator" id="startBtn">Tap</div>
-    </section>
-
-    <!-- PROJECTS -->
-    <div class="projects-layout" id="projectsLayout">
-      <div class="scroll-track" id="scrollTrack">
-
-        <div class="left-content" id="leftContent">
-            <div class="project-text-group active" id="text-0">
-                <span class="project-tag">Web Design</span>
-                <h2>Projects</h2>
-                <p></p>
-                <a href="projects/projects.html" class="cta-button">Open Laptop</a>
-            </div>
-            <div class="project-text-group" id="text-1">
-                <span class="project-tag">Illustration</span>
-                <h2>Artworks</h2>
-                <p></p>
-                <a href="projects/M02/index.html" class="cta-button">View Canvas</a>
-            </div>
-        </div>
-
-        <div class="right-side" id="itemContainer">
-
-            <!-- WEB -->
-            <div class="item-section">
-                <div class="showcase-wrapper">
-                    <div class="float-img web-float-a" data-float="0a"><img src="assets/images/2.svg" alt="" /></div>
-                    <div class="showcase-item laptop-mockup" id="item-0">
-                        <div class="screen-content theme-web"><h3>Web Projects</h3></div>
-                    </div>
-                    <div class="float-img web-float-b" data-float="0b"><img src="assets/images/4.svg" alt="" /></div>
-                </div>
-            </div>
-
-            <!-- ART -->
-            <div class="item-section">
-                <div class="showcase-wrapper">
-                    <div class="float-img art-float-a" data-float="1a"><img src="assets/images/5.svg" alt="" /></div>
-                    <div class="showcase-item canvas-mockup" id="item-1">
-                        <div class="screen-content theme-art"><h3 style="color:#444;">Artwork</h3></div>
-                    </div>
-                    <div class="float-img art-float-b" data-float="1b"><img src="assets/images/6.svg" alt="" /></div>
-                </div>
-            </div>
-
-        </div>
-
-      </div>
-
-      <div class="scroll-dots" id="scrollDots">
-          <div class="dot active"></div>
-          <div class="dot"></div>
-      </div>
     </div>
 
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="#heroSection" class="logo">
+                <img src="assets/images/J.png" alt="Johann Logo">
+            </a>
+
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#skills">Tools</a>
+                    <a href="#showcase">Showcase</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <span class="nav-site">yohanncrypto.github.io</span>
+            </div>
+        </div>
+
+        <div class="linegraphy-divider" aria-hidden="true">
+            <div class="shooting-star">
+                <span class="star-trail"></span>
+                <svg class="shooting-head" viewBox="0 0 24 24">
+                    <path d="M12 0 C12 9 15 12 24 12 C15 12 12 15 12 24 C12 15 9 12 0 12 C9 12 12 9 12 0 Z"/>
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-poster" id="heroSection">
+        <div class="hero-top-meta">
+            <span>CREATIVE DEVELOPER • GRAPHIC DESIGNER • ARTIST</span>
+            <span>JOHANN EMMANUEL B. DE VERA</span>
+        </div>
+
+        <div class="hero-stage">
+            <h1 class="extruded-title">PORTFOLIO</h1>
+            <div class="hero-avatar-3d" id="profilePic">
+                <img src="assets/images/19_De Vera Johann Emmanuel B.jpg" alt="Johann Emmanuel B. De Vera">
+                <div class="hero-badge">BSIT Cum Laude • Artist</div>
+            </div>
+        </div>
+
+        <a href="#about" class="scroll-indicator">Explore</a>
+    </header>
+
+    <!-- EDITORIAL CONTENT -->
+    <main class="content-flow">
+
+        <!-- ABOUT ME -->
+        <section class="flow-section" id="about">
+            <div class="about-solo">
+                <span class="eyebrow">Profile</span>
+                <h2 class="section-heading">About Me</h2>
+                <h3 class="about-name">Johann Emmanuel B. De Vera</h3>
+                <p class="about-role">Creative Developer | Graphic Designer | Digital Artist</p>
+                <p class="about-bio">
+                    A 22-year-old Bachelor of Science in Information Technology graduate (Cum Laude) from the Polytechnic University of the Philippines, with a strong passion for graphic design, digital art, and visual creativity. Experienced in creating event posters, promotional materials, digital illustrations, and full-stack web applications.
+                </p>
+            </div>
+        </section>
+
+        <hr class="section-rule">
+
+        <!-- EDUCATION & EXPERIENCE -->
+        <section class="flow-section split-section" id="experience">
+            <div>
+                <span class="eyebrow">Academic Background</span>
+                <h2 class="section-heading">Education</h2>
+
+                <div class="timeline-block">
+                    <div class="timeline-header">
+                        <strong>Polytechnic University of the Philippines</strong>
+                        <span class="year-tag">2022 – 2026</span>
+                    </div>
+                    <p class="timeline-sub">Bachelor of Science in Information Technology (BSIT)</p>
+                    <p class="timeline-accent">Cum Laude • President's & Dean's Lister</p>
+                </div>
+
+                <h3 class="mini-heading">Certifications & Organizations</h3>
+                <ul class="clean-list">
+                    <li>Graphics Designer Certificate (2023)</li>
+                    <li>AI & Machine Learning Journey (2025)</li>
+                    <li>PUP STC COMSOC — Design & Technical Committee</li>
+                    <li>Google Developer Students Club & Dibujo Art Society</li>
+                </ul>
+            </div>
+
+            <div>
+                <span class="eyebrow">Career & Builds</span>
+                <h2 class="section-heading">Experience</h2>
+
+                <div class="timeline-block">
+                    <div class="timeline-header">
+                        <strong>Technical Support Intern</strong>
+                        <span class="year-tag">2026</span>
+                    </div>
+                    <p class="timeline-accent">Luzon Development Bank</p>
+                    <ul class="clean-list">
+                        <li>Designed and edited promotional posts, announcements, and digital communication materials.</li>
+                        <li>Created email layouts and visual content supporting internal communications and presentations.</li>
+                        <li>Organized digital records, assisted with database updates, and provided employee IT troubleshooting.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-header">
+                        <strong>Academic & Creative Works</strong>
+                        <span class="year-tag">2022 – 2026</span>
+                    </div>
+                    <p class="timeline-accent">Web & Visual Design Projects</p>
+                    <ul class="clean-list">
+                        <li>Created graphic designs, event posters, icons, branding assets, and commissioned digital illustrations.</li>
+                        <li>Contributed visual design, creative assets, and web/e-commerce development for <strong>CtrlSave</strong>, <strong>NowUKnow</strong>, and <strong>Evently</strong>.</li>
+                        <li>Developed full-stack web applications and collaborated on Java-based game projects.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-rule">
+
+        <!-- TOOLS & SKILLS -->
+        <section class="flow-section" id="skills">
+            <span class="eyebrow">Capabilities</span>
+            <h2 class="section-heading">Tools & Technical Skills</h2>
+
+            <div class="skills-split">
+                <div>
+                    <h3 class="mini-heading">Design & Illustration</h3>
+                    <div class="tool-row">
+                        <div class="tool-item"><strong>Ps</strong><span>Photoshop</span></div>
+                        <div class="tool-item"><strong>Fg</strong><span>Figma</span></div>
+                        <div class="tool-item"><strong>Cv</strong><span>Canva</span></div>
+                        <div class="tool-item"><strong>Kr</strong><span>Krita</span></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="mini-heading">Web & Development</h3>
+                    <div class="skill-inline-list">
+                        <span>HTML5</span>
+                        <span>CSS3 / Tailwind</span>
+                        <span>JavaScript</span>
+                        <span>PHP</span>
+                        <span>Python</span>
+                        <span>Java</span>
+                        <span>SQL / MySQL</span>
+                        <span>WordPress</span>
+                        <span>Git & GitHub</span>
+                        <span>UI/UX Prototyping</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <hr class="section-rule">
+
+    <!-- INTERACTIVE SHOWCASE -->
+    <section class="projects-layout" id="showcase">
+        <div class="scroll-track" id="scrollTrack">
+
+            <div class="left-content">
+                <div class="project-text-group active">
+                    <span class="project-tag">Web Design</span>
+                    <h2>Projects</h2>
+                    <p>Full-stack web apps, UI/UX interfaces, and e-commerce builds including CtrlSave, NowUKnow, and Evently.</p>
+                    <a href="projects/projects.html" class="cta-button">Open Laptop</a>
+                </div>
+                <div class="project-text-group">
+                    <span class="project-tag">Illustration</span>
+                    <h2>Artworks</h2>
+                    <p>Digital illustrations, event posters, and commissioned character art crafted in Photoshop and Krita.</p>
+                    <a href="projects/M02/index.html" class="cta-button">View Canvas</a>
+                </div>
+            </div>
+
+            <div class="right-side" id="itemContainer">
+                <div class="item-section">
+                    <div class="showcase-wrapper">
+                        <div class="float-img float-top-left" data-float="0a"><img src="assets/images/2.svg" alt=""></div>
+                        <div class="showcase-item laptop-mockup">
+                            <div class="screen-content theme-web"><h3>Web Projects</h3></div>
+                        </div>
+                        <div class="float-img float-bottom-right" data-float="0b"><img src="assets/images/4.svg" alt=""></div>
+                    </div>
+                </div>
+
+                <div class="item-section">
+                    <div class="showcase-wrapper">
+                        <div class="float-img float-top-left" data-float="1a"><img src="assets/images/5.svg" alt=""></div>
+                        <div class="showcase-item canvas-mockup">
+                            <div class="screen-content theme-art"><h3>Artwork</h3></div>
+                        </div>
+                        <div class="float-img float-bottom-right" data-float="1b"><img src="assets/images/6.svg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="scroll-dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+        </div>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- FOOTER / GET IN TOUCH -->
+    <footer class="site-footer" id="contact">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div>
+                    <span class="eyebrow">Get in Touch</span>
+                    <h2 class="section-heading">Contact</h2>
+                    <p class="footer-tagline">
+                        Open for creative development, graphic design, and digital illustration inquiries.
+                    </p>
+                </div>
+
+                <ul class="footer-contact-grid">
+                    <li>
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:johanndevera555@gmail.com">johanndevera555@gmail.com</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">Phone</span>
+                        <a href="tel:09659811896">0965-981-1896</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">Location</span>
+                        <span>Brgy. San Jose, City of Sto. Tomas, Batangas</span>
+                    </li>
+                    <li>
+                        <span class="contact-label">Portfolio</span>
+                        <a href="https://yohanncrypto.github.io" target="_blank" rel="noopener">yohanncrypto.github.io</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 Johann Emmanuel B. De Vera</span>
+                <a href="#heroSection" class="back-to-top">Back to Top ↑</a>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        const heroSection    = document.getElementById('heroSection');
-        const projectsLayout = document.getElementById('projectsLayout');
-        const profilePic     = document.getElementById('profilePic');
-        const scrollTrack    = document.getElementById('scrollTrack');
-        const itemContainer  = document.getElementById('itemContainer');
-        const leftContent    = document.getElementById('leftContent');
-        const items          = document.querySelectorAll('.showcase-item');
-        const wrappers       = document.querySelectorAll('.showcase-wrapper');
-        const texts          = document.querySelectorAll('.project-text-group');
-        const dots           = document.querySelectorAll('.dot');
+        /* ── STAR LOADING SCREEN ── */
+        const starLoader = document.getElementById('starLoader');
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (!starLoader) return;
+                starLoader.classList.add('fade-out');
+                setTimeout(() => starLoader.remove(), 650);
+            }, 1200);
+        });
+
+        /* ── 3D TILT & SHOWCASE PARALLAX ── */
+        const profilePic    = document.getElementById('profilePic');
+        const scrollTrack   = document.getElementById('scrollTrack');
+        const itemContainer = document.getElementById('itemContainer');
+        const items         = document.querySelectorAll('.showcase-item');
+        const wrappers      = document.querySelectorAll('.showcase-wrapper');
+        const texts         = document.querySelectorAll('.project-text-group');
+        const dots          = document.querySelectorAll('.dot');
 
         const floats = [
             [document.querySelector('[data-float="0a"]'), document.querySelector('[data-float="0b"]')],
-            [document.querySelector('[data-float="1a"]'), document.querySelector('[data-float="1b"]')],
+            [document.querySelector('[data-float="1a"]'), document.querySelector('[data-float="1b"]')]
         ];
 
-        const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
-
-        // On desktop, scroll-track is the single native scroll container (left + right
-        // both live inside it). On mobile, right-side (itemContainer) scrolls on its own.
-        const scrollEl = () => isMobile() ? itemContainer : scrollTrack;
-
-        let isHeroVisible = true;
-        let scrollCooldown = false;
+        const mobileQuery = window.matchMedia('(max-width: 768px)');
         let cursorX = 0, cursorY = 0, targetX = 0, targetY = 0;
 
-        /* ── NAVIGATION ── */
-        function goToProjects() {
-            if (!isHeroVisible) return;
-            isHeroVisible = false;
-            heroSection.classList.add('hidden');
-            projectsLayout.classList.add('visible');
-            scrollCooldown = true;
-            setTimeout(() => { scrollCooldown = false; }, 1000);
-        }
-
-        function goToHero() {
-            if (isHeroVisible || scrollCooldown) return;
-            isHeroVisible = true;
-            heroSection.classList.remove('hidden');
-            projectsLayout.classList.remove('visible');
-            scrollEl().scrollTop = 0;
-        }
-
-        window.addEventListener('wheel', (e) => {
-            if (isHeroVisible) {
-                if (e.deltaY > 30) goToProjects();
-                return;
-            }
-            if (scrollEl().scrollTop <= 5 && e.deltaY < -30) goToHero();
-        }, { passive: true });
-
-        /* ── TOUCH ── */
-        let touchStartY = 0;
-
-        heroSection.addEventListener('touchstart', (e) => {
-            touchStartY = e.touches[0].clientY;
-        }, { passive: true });
-
-        heroSection.addEventListener('touchend', (e) => {
-            if (touchStartY - e.changedTouches[0].clientY > 40) goToProjects();
-        }, { passive: true });
-
-        itemContainer.addEventListener('touchstart', (e) => {
-            touchStartY = e.touches[0].clientY;
-        }, { passive: true });
-
-        itemContainer.addEventListener('touchend', (e) => {
-            const dy = touchStartY - e.changedTouches[0].clientY;
-            if (itemContainer.scrollTop <= 2 && dy < -40) goToHero();
-        }, { passive: true });
-
-        /* ── CTA ── */
-        document.getElementById('startBtn').addEventListener('click', goToProjects);
-
-        /* ── DOTS ── */
-        function updateDots(i) {
-            dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
-        }
-
-        /* ── MOUSE PARALLAX (desktop only) ── */
         document.addEventListener('mousemove', (e) => {
-            if (isMobile()) return;
-            const x = (e.clientX / window.innerWidth)  * 2 - 1;
+            if (mobileQuery.matches) return;
+            const x = (e.clientX / window.innerWidth) * 2 - 1;
             const y = (e.clientY / window.innerHeight) * 2 - 1;
-            if (isHeroVisible) profilePic.style.transform = `rotateX(${-y*15}deg) rotateY(${x*15}deg)`;
-            targetX = x * 10; targetY = y * 10;
-        });
 
-        /* ── ANIMATE LOOP ── */
-        function animate() {
-        const mobile = isMobile();
-        if (!mobile) {
-            cursorX += (targetX - cursorX) * 0.06;
-            cursorY += (targetY - cursorY) * 0.06;
-        }
-
-        const FLOAT_SPEED = 1.65;
-        const container = scrollEl();
-        const containerRect = container.getBoundingClientRect();
-        const containerCenter = containerRect.top + containerRect.height / 2;
-
-        let closestIndex = 0;
-        let minDistance = Infinity;
-
-        // Identify active item based on proximity to center
-        items.forEach((item, index) => {
-            const rect = item.getBoundingClientRect();
-            const itemCenter = rect.top + rect.height / 2;
-            const distance = Math.abs(containerCenter - itemCenter);
-
-            if (distance < minDistance) {
-                minDistance = distance;
-                closestIndex = index;
+            if (profilePic) {
+                profilePic.style.transform = `perspective(1000px) rotateX(${-y * 12}deg) rotateY(${x * 12}deg)`;
             }
+
+            targetX = x * 12;
+            targetY = y * 12;
         });
 
-        // Update active text and dot indicators
-        texts.forEach((t, i) => t.classList.toggle('active', i === closestIndex));
-        updateDots(closestIndex);
-
-        // Apply scaling and opacity
-        items.forEach((item, index) => {
-            const rect = item.getBoundingClientRect();
-            const itemCenter = rect.top + rect.height / 2;
-            const distance = Math.abs(containerCenter - itemCenter);
-            const maxDist = containerRect.height / 1.2;
-
-            let scale = Math.max(0.75, Math.min(1, 1 - (distance / maxDist) * 0.25));
+        function animate() {
+            const mobile = mobileQuery.matches;
+            const container = mobile ? itemContainer : scrollTrack;
 
             if (!mobile) {
-                if (index === closestIndex) {
-                    item.style.transform = `scale(${scale}) translate(${cursorX}px, ${cursorY}px)`;
-                    floats[index].forEach(f => {
-                        if (f) f.style.transform = `translate(${cursorX * FLOAT_SPEED}px, ${cursorY * FLOAT_SPEED}px)`;
-                    });
-                } else {
-                    item.style.transform = `scale(${scale})`;
-                    floats[index].forEach(f => { if (f) f.style.transform = 'translate(0,0)'; });
-                }
-            } else {
-                item.style.transform = `scale(${scale})`;
-                if (wrappers[index]) {
-                    // Smooth fade instead of sudden zero-opacity cutoff
-                    const fadeOpacity = Math.max(0.15, 1 - (distance / (containerRect.height * 0.55)));
-                    wrappers[index].style.opacity = fadeOpacity.toString();
-                }
+                cursorX += (targetX - cursorX) * 0.06;
+                cursorY += (targetY - cursorY) * 0.06;
             }
-        });
 
-        requestAnimationFrame(animate);
-    }
+            if (container) {
+                const containerRect = container.getBoundingClientRect();
+                const containerCenter = containerRect.top + containerRect.height / 2;
+                const maxDist = containerRect.height / 1.2;
+
+                let closestIndex = 0;
+                let minDistance = Infinity;
+                const distances = [];
+
+                items.forEach((item, index) => {
+                    const rect = item.getBoundingClientRect();
+                    const distance = Math.abs(containerCenter - (rect.top + rect.height / 2));
+                    distances[index] = distance;
+
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestIndex = index;
+                    }
+                });
+
+                texts.forEach((t, i) => t.classList.toggle('active', i === closestIndex));
+                dots.forEach((d, i) => d.classList.toggle('active', i === closestIndex));
+
+                items.forEach((item, index) => {
+                    const distance = distances[index];
+                    const scale = Math.max(0.78, Math.min(1, 1 - (distance / maxDist) * 0.22));
+
+                    if (!mobile) {
+                        const isActive = index === closestIndex;
+                        item.style.transform = isActive
+                            ? `scale(${scale}) translate(${cursorX}px, ${cursorY}px)`
+                            : `scale(${scale})`;
+
+                        floats[index].forEach(f => {
+                            if (f) {
+                                f.style.transform = isActive
+                                    ? `translate(${cursorX * 1.65}px, ${cursorY * 1.65}px)`
+                                    : 'translate(0, 0)';
+                            }
+                        });
+                    } else {
+                        item.style.transform = `scale(${scale})`;
+                        if (wrappers[index]) {
+                            wrappers[index].style.opacity = Math.max(0.2, 1 - (distance / (containerRect.height * 0.55))).toString();
+                        }
+                    }
+                });
+            }
+
+            requestAnimationFrame(animate);
+        }
+
         animate();
     </script>
 </body>
